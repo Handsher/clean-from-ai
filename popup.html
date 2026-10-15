@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Clean from AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="24" height="24">
+    <div class="title">
+      <b>Clean from AI</b>
+      <span>X · Typefully</span>
+    </div>
+    <button id="power" class="power" type="button" aria-pressed="true"><i></i><span>On</span></button>
+  </header>
+
+  <div class="box">
+    <textarea id="input" placeholder="Paste text with AI tells..." spellcheck="false" autofocus></textarea>
+    <div class="box-foot">
+      <span id="found" class="found"></span>
+      <button id="go" class="go" type="button" title="Clean & copy (⌘↵)" aria-label="Clean and copy" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><g transform="rotate(-45 13.5 13)"><rect x="5.5" y="9.5" width="16" height="7" rx="1.8"/><path d="M10.5 9.5v7"/></g><path d="M8 21h12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="label">Clean</div>
+  <div id="rules" class="rules"></div>
+
+  <footer>
+    <span><b id="total">0</b> tells removed</span>
+    <span><a href="https://handsher.github.io/clean-from-ai/" target="_blank" rel="noopener">privacy</a> · <span id="version"></span></span>
+  </footer>
+
+  <script src="clean.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

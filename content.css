@@ -1,0 +1,57 @@
+.cleanai-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+/* Same size and colour as X's own composer icons */
+.cleanai-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgb(29, 155, 240);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cleanai-btn:hover { background: rgba(29, 155, 240, 0.1); }
+.cleanai-btn:focus-visible { outline: 2px solid rgb(29, 155, 240); outline-offset: 1px; }
+.cleanai-btn svg { width: 20px; height: 20px; }
+.cleanai-btn.cleanai-done { color: rgb(0, 186, 124); }
+
+.cleanai-badge {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background: rgb(244, 33, 46);
+  color: #fff;
+  font: 700 10px/16px TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+.cleanai-badge[hidden] { display: none; }
+
+/* Floating eraser for other editors (Typefully...): solid so it reads on any background */
+.cleanai-float { position: fixed; z-index: 2147483647; }
+.cleanai-float .cleanai-btn {
+  width: 30px;
+  height: 30px;
+  background: rgb(29, 155, 240);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.cleanai-float .cleanai-btn:hover { background: rgb(26, 140, 216); }
+.cleanai-float .cleanai-btn svg { width: 18px; height: 18px; }
+.cleanai-float .cleanai-btn.cleanai-done { background: rgb(0, 186, 124); color: #fff; }
