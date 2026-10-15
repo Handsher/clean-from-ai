@@ -16,24 +16,25 @@
   </header>
 
   <div class="box">
-    <textarea id="input" placeholder="Paste text with AI tells..." spellcheck="false" autofocus></textarea>
+    <textarea id="input" data-i18n-placeholder="placeholder" spellcheck="false" autofocus></textarea>
     <div class="box-foot">
       <span id="found" class="found"></span>
-      <button id="go" class="go" type="button" title="Clean & copy (⌘↵)" aria-label="Clean and copy" disabled>
+      <button id="go" class="go" type="button" data-i18n-title="go_hint" data-i18n-aria="go_label" disabled>
         <svg viewBox="0 0 24 24" aria-hidden="true"><g transform="rotate(-45 13.5 13)"><rect x="5.5" y="9.5" width="16" height="7" rx="1.8"/><path d="M10.5 9.5v7"/></g><path d="M8 21h12"/></svg>
       </button>
     </div>
   </div>
 
-  <div class="label">Clean</div>
+  <div class="label" data-i18n="section_clean">Clean</div>
   <div id="rules" class="rules"></div>
 
   <footer>
-    <span><b id="total">0</b> tells removed</span>
-    <span><a href="https://handsher.github.io/clean-from-ai/" target="_blank" rel="noopener">privacy</a> · <span id="version"></span></span>
+    <span id="total"></span>
+    <span><a href="https://handsher.github.io/clean-from-ai/" target="_blank" rel="noopener" data-i18n="privacy">privacy</a> · <span id="version"></span></span>
   </footer>
 
   <script src="clean.js"></script>
+  <script src="i18n.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

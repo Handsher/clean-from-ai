@@ -1,0 +1,110 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Menghapus karakter watermark AI tersembunyi dan tipografi AI dari postingan Anda di X dan Typefully, atau dari teks apa pun yang ditempel."
+  },
+  "btn_clean_other": {
+    "message": "Bersihkan $COUNT$ jejak AI",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (tidak ada jejak AI)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (tidak tersedia untuk postingan berformat)"
+  },
+  "power_on": {
+    "message": "Aktif"
+  },
+  "power_paused": {
+    "message": "Dijeda"
+  },
+  "power_pause": {
+    "message": "Jeda di X dan Typefully"
+  },
+  "power_resume": {
+    "message": "Aktifkan untuk X dan Typefully"
+  },
+  "placeholder": {
+    "message": "Tempel teks dengan jejak AI..."
+  },
+  "found_other": {
+    "message": "$COUNT$ jejak",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "bersih"
+  },
+  "found_copied": {
+    "message": "disalin"
+  },
+  "found_cleaned": {
+    "message": "dibersihkan"
+  },
+  "go_hint": {
+    "message": "Bersihkan & salin (⌘↵)"
+  },
+  "go_label": {
+    "message": "Bersihkan dan salin"
+  },
+  "section_clean": {
+    "message": "Bersihkan"
+  },
+  "rule_invisible": {
+    "message": "Tersembunyi"
+  },
+  "hint_invisible": {
+    "message": "Karakter tak terlihat dan watermark tag"
+  },
+  "rule_spaces": {
+    "message": "Spasi"
+  },
+  "hint_spaces": {
+    "message": "Spasi tak terpisah, tipis, dan lebar"
+  },
+  "rule_dashes": {
+    "message": "Tanda pisah"
+  },
+  "hint_dashes": {
+    "message": "Tanda pisah panjang"
+  },
+  "rule_quotes": {
+    "message": "Tanda kutip"
+  },
+  "hint_quotes": {
+    "message": "Tanda kutip lengkung dan apostrof"
+  },
+  "rule_bullets": {
+    "message": "Poin"
+  },
+  "hint_bullets": {
+    "message": "Poin daftar"
+  },
+  "rule_fancy": {
+    "message": "Huruf hias"
+  },
+  "hint_fancy": {
+    "message": "Huruf Unicode tebal/miring, elipsis"
+  },
+  "removed_other": {
+    "message": "$COUNT$ jejak dihapus",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privasi"
+  }
+}

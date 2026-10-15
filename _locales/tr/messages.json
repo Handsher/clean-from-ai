@@ -1,0 +1,110 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "X ve Typefully'deki gönderilerinizden veya yapıştırdığınız metinden gizli yapay zeka filigran karakterlerini ve yapay zeka tipografisini temizler."
+  },
+  "btn_clean_other": {
+    "message": "$COUNT$ yapay zeka izini temizle",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (yapay zeka izi bulunamadı)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (biçimli gönderiler için kullanılamaz)"
+  },
+  "power_on": {
+    "message": "Açık"
+  },
+  "power_paused": {
+    "message": "Duraklatıldı"
+  },
+  "power_pause": {
+    "message": "X ve Typefully'de duraklat"
+  },
+  "power_resume": {
+    "message": "X ve Typefully için aç"
+  },
+  "placeholder": {
+    "message": "Yapay zeka izleri içeren metni yapıştırın..."
+  },
+  "found_other": {
+    "message": "$COUNT$ iz",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "temiz"
+  },
+  "found_copied": {
+    "message": "kopyalandı"
+  },
+  "found_cleaned": {
+    "message": "temizlendi"
+  },
+  "go_hint": {
+    "message": "Temizle ve kopyala (⌘↵)"
+  },
+  "go_label": {
+    "message": "Temizle ve kopyala"
+  },
+  "section_clean": {
+    "message": "Temizle"
+  },
+  "rule_invisible": {
+    "message": "Gizli"
+  },
+  "hint_invisible": {
+    "message": "Görünmez karakterler ve tag filigranları"
+  },
+  "rule_spaces": {
+    "message": "Boşluklar"
+  },
+  "hint_spaces": {
+    "message": "Bölünmez, ince ve geniş boşluklar"
+  },
+  "rule_dashes": {
+    "message": "Tireler"
+  },
+  "hint_dashes": {
+    "message": "Uzun tireler"
+  },
+  "rule_quotes": {
+    "message": "Tırnaklar"
+  },
+  "hint_quotes": {
+    "message": "Kıvrık tırnaklar ve kesme işaretleri"
+  },
+  "rule_bullets": {
+    "message": "Madde imleri"
+  },
+  "hint_bullets": {
+    "message": "Liste madde imleri"
+  },
+  "rule_fancy": {
+    "message": "Süslü harfler"
+  },
+  "hint_fancy": {
+    "message": "Kalın/italik Unicode harfler, üç nokta"
+  },
+  "removed_other": {
+    "message": "$COUNT$ iz temizlendi",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "gizlilik"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Remove caracteres ocultos de marca d'água de IA e tipografia de IA dos seus posts no X e no Typefully, ou de qualquer texto colado."
+  },
+  "btn_clean_one": {
+    "message": "Limpar $COUNT$ rastro de IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Limpar $COUNT$ rastros de IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (nenhum rastro de IA)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (indisponível para posts formatados)"
+  },
+  "power_on": {
+    "message": "Ligado"
+  },
+  "power_paused": {
+    "message": "Pausado"
+  },
+  "power_pause": {
+    "message": "Pausar no X e no Typefully"
+  },
+  "power_resume": {
+    "message": "Ativar para X e Typefully"
+  },
+  "placeholder": {
+    "message": "Cole um texto com rastros de IA..."
+  },
+  "found_one": {
+    "message": "$COUNT$ rastro",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ rastros",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "limpo"
+  },
+  "found_copied": {
+    "message": "copiado"
+  },
+  "found_cleaned": {
+    "message": "limpo"
+  },
+  "go_hint": {
+    "message": "Limpar e copiar (⌘↵)"
+  },
+  "go_label": {
+    "message": "Limpar e copiar"
+  },
+  "section_clean": {
+    "message": "Limpar"
+  },
+  "rule_invisible": {
+    "message": "Ocultos"
+  },
+  "hint_invisible": {
+    "message": "Caracteres invisíveis e marcas d'água tag"
+  },
+  "rule_spaces": {
+    "message": "Espaços"
+  },
+  "hint_spaces": {
+    "message": "Espaços não separáveis, finos e largos"
+  },
+  "rule_dashes": {
+    "message": "Travessões"
+  },
+  "hint_dashes": {
+    "message": "Travessões longos"
+  },
+  "rule_quotes": {
+    "message": "Aspas"
+  },
+  "hint_quotes": {
+    "message": "Aspas curvas e apóstrofos"
+  },
+  "rule_bullets": {
+    "message": "Marcadores"
+  },
+  "hint_bullets": {
+    "message": "Marcadores de lista"
+  },
+  "rule_fancy": {
+    "message": "Estilizadas"
+  },
+  "hint_fancy": {
+    "message": "Letras Unicode em negrito/itálico, reticências"
+  },
+  "removed_one": {
+    "message": "$COUNT$ rastro removido",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ rastros removidos",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privacidade"
+  }
+}

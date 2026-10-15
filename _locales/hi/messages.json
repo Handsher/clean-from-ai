@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "X और Typefully पर आपकी पोस्ट या किसी भी पेस्ट किए गए टेक्स्ट से छिपे AI वॉटरमार्क अक्षर और AI टाइपोग्राफ़ी हटाता है।"
+  },
+  "btn_clean_one": {
+    "message": "$COUNT$ AI निशान हटाएँ",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "$COUNT$ AI निशान हटाएँ",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (कोई AI निशान नहीं)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (फ़ॉर्मेट की गई पोस्ट के लिए उपलब्ध नहीं)"
+  },
+  "power_on": {
+    "message": "चालू"
+  },
+  "power_paused": {
+    "message": "रुका हुआ"
+  },
+  "power_pause": {
+    "message": "X और Typefully पर रोकें"
+  },
+  "power_resume": {
+    "message": "X और Typefully के लिए चालू करें"
+  },
+  "placeholder": {
+    "message": "AI निशान वाला टेक्स्ट पेस्ट करें..."
+  },
+  "found_one": {
+    "message": "$COUNT$ निशान",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ निशान",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "साफ़"
+  },
+  "found_copied": {
+    "message": "कॉपी हो गया"
+  },
+  "found_cleaned": {
+    "message": "साफ़ हो गया"
+  },
+  "go_hint": {
+    "message": "साफ़ करें और कॉपी करें (⌘↵)"
+  },
+  "go_label": {
+    "message": "साफ़ करें और कॉपी करें"
+  },
+  "section_clean": {
+    "message": "साफ़ करें"
+  },
+  "rule_invisible": {
+    "message": "छिपे अक्षर"
+  },
+  "hint_invisible": {
+    "message": "ज़ीरो-विड्थ अक्षर और टैग वॉटरमार्क"
+  },
+  "rule_spaces": {
+    "message": "स्पेस"
+  },
+  "hint_spaces": {
+    "message": "नॉन-ब्रेकिंग, पतले और चौड़े स्पेस"
+  },
+  "rule_dashes": {
+    "message": "डैश"
+  },
+  "hint_dashes": {
+    "message": "लंबे डैश"
+  },
+  "rule_quotes": {
+    "message": "उद्धरण चिह्न"
+  },
+  "hint_quotes": {
+    "message": "घुमावदार उद्धरण चिह्न और एपॉस्ट्रॉफ़ी"
+  },
+  "rule_bullets": {
+    "message": "बुलेट"
+  },
+  "hint_bullets": {
+    "message": "सूची बुलेट"
+  },
+  "rule_fancy": {
+    "message": "सजावटी अक्षर"
+  },
+  "hint_fancy": {
+    "message": "बोल्ड/इटैलिक Unicode अक्षर, दीर्घविराम"
+  },
+  "removed_one": {
+    "message": "$COUNT$ निशान हटाया गया",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ निशान हटाए गए",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "गोपनीयता"
+  }
+}

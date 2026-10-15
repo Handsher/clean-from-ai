@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Strips hidden AI watermark characters and AI typography from your posts on X and Typefully, or from any text you paste."
+  },
+  "btn_clean_one": {
+    "message": "Clean $COUNT$ AI tell",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Clean $COUNT$ AI tells",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (no AI tells found)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (not available for formatted posts)"
+  },
+  "power_on": {
+    "message": "On"
+  },
+  "power_paused": {
+    "message": "Paused"
+  },
+  "power_pause": {
+    "message": "Pause on X and Typefully"
+  },
+  "power_resume": {
+    "message": "Turn on for X and Typefully"
+  },
+  "placeholder": {
+    "message": "Paste text with AI tells..."
+  },
+  "found_one": {
+    "message": "$COUNT$ tell",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ tells",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "clean"
+  },
+  "found_copied": {
+    "message": "copied"
+  },
+  "found_cleaned": {
+    "message": "cleaned"
+  },
+  "go_hint": {
+    "message": "Clean & copy (⌘↵)"
+  },
+  "go_label": {
+    "message": "Clean and copy"
+  },
+  "section_clean": {
+    "message": "Clean"
+  },
+  "rule_invisible": {
+    "message": "Hidden"
+  },
+  "hint_invisible": {
+    "message": "Zero-width and tag watermarks"
+  },
+  "rule_spaces": {
+    "message": "Spaces"
+  },
+  "hint_spaces": {
+    "message": "Non-breaking, thin and wide spaces"
+  },
+  "rule_dashes": {
+    "message": "Dashes"
+  },
+  "hint_dashes": {
+    "message": "Long dashes"
+  },
+  "rule_quotes": {
+    "message": "Quotes"
+  },
+  "hint_quotes": {
+    "message": "Curly quotes and apostrophes"
+  },
+  "rule_bullets": {
+    "message": "Bullets"
+  },
+  "hint_bullets": {
+    "message": "Bullet points"
+  },
+  "rule_fancy": {
+    "message": "Fancy"
+  },
+  "hint_fancy": {
+    "message": "Bold/italic Unicode letters, ellipsis"
+  },
+  "removed_one": {
+    "message": "$COUNT$ tell removed",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ tells removed",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privacy"
+  }
+}

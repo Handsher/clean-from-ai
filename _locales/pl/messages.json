@@ -1,0 +1,182 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Usuwa ukryte znaki wodne AI i typografię AI z Twoich postów na X i Typefully lub z dowolnego wklejonego tekstu."
+  },
+  "btn_clean_one": {
+    "message": "Usuń $COUNT$ ślad AI",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_few": {
+    "message": "Usuń $COUNT$ ślady AI",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_many": {
+    "message": "Usuń $COUNT$ śladów AI",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Usuń $COUNT$ śladów AI",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (brak śladów AI)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (niedostępne dla sformatowanych postów)"
+  },
+  "power_on": {
+    "message": "Włączone"
+  },
+  "power_paused": {
+    "message": "Wstrzymane"
+  },
+  "power_pause": {
+    "message": "Wstrzymaj na X i Typefully"
+  },
+  "power_resume": {
+    "message": "Włącz dla X i Typefully"
+  },
+  "placeholder": {
+    "message": "Wklej tekst ze śladami AI..."
+  },
+  "found_one": {
+    "message": "$COUNT$ ślad",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_few": {
+    "message": "$COUNT$ ślady",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_many": {
+    "message": "$COUNT$ śladów",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ śladów",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "czysto"
+  },
+  "found_copied": {
+    "message": "skopiowano"
+  },
+  "found_cleaned": {
+    "message": "wyczyszczono"
+  },
+  "go_hint": {
+    "message": "Wyczyść i skopiuj (⌘↵)"
+  },
+  "go_label": {
+    "message": "Wyczyść i skopiuj"
+  },
+  "section_clean": {
+    "message": "Czyść"
+  },
+  "rule_invisible": {
+    "message": "Ukryte"
+  },
+  "hint_invisible": {
+    "message": "Niewidoczne znaki i znaki wodne tag"
+  },
+  "rule_spaces": {
+    "message": "Spacje"
+  },
+  "hint_spaces": {
+    "message": "Spacje niełamliwe, wąskie i szerokie"
+  },
+  "rule_dashes": {
+    "message": "Myślniki"
+  },
+  "hint_dashes": {
+    "message": "Długie myślniki"
+  },
+  "rule_quotes": {
+    "message": "Cudzysłowy"
+  },
+  "hint_quotes": {
+    "message": "Cudzysłowy typograficzne i apostrofy"
+  },
+  "rule_bullets": {
+    "message": "Punktory"
+  },
+  "hint_bullets": {
+    "message": "Punktory listy"
+  },
+  "rule_fancy": {
+    "message": "Ozdobne"
+  },
+  "hint_fancy": {
+    "message": "Pogrubione/kursywne litery Unicode, wielokropek"
+  },
+  "removed_one": {
+    "message": "Usunięto $COUNT$ ślad",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_few": {
+    "message": "Usunięto $COUNT$ ślady",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_many": {
+    "message": "Usunięto $COUNT$ śladów",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "Usunięto $COUNT$ śladów",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "prywatność"
+  }
+}

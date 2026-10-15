@@ -141,4 +141,4 @@ textarea:focus-visible { outline: none; }
 .rule[aria-pressed="false"] code { text-decoration: line-through; }
 
 footer { display: flex; justify-content: space-between; margin: 12px 2px 0; font: 11px var(--mono); color: var(--muted); }
-footer b { color: var(--text); font-weight: 600; }
+#total { color: var(--text); font-weight: 600; }

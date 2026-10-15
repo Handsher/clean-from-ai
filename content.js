@@ -69,7 +69,7 @@ function updateBadge(wrap) {
   let n = 0, rich = false;
   for (const editor of wrap.getEditors()) isRich(editor) ? (rich = true) : (n += analyze(readText(editor), settings.rules).count);
   const badge = wrap.lastChild, btn = wrap.firstChild;
-  const label = n ? `Clean ${n} AI tell${n > 1 ? 's' : ''}` : rich ? 'Clean AI (not available for formatted posts)' : 'Clean AI (no AI tells found)';
+  const label = n ? tn('btn_clean', n) : t(rich ? 'btn_rich' : 'btn_none');
   if (badge.hidden !== !n) badge.hidden = !n;
   const shown = n > 99 ? '99+' : String(n);
   if (n && badge.textContent !== shown) badge.textContent = shown;

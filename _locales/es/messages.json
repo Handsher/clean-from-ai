@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Elimina los caracteres ocultos de marca de agua de IA y la tipografía de IA de tus publicaciones en X y Typefully, o de cualquier texto pegado."
+  },
+  "btn_clean_one": {
+    "message": "Limpiar $COUNT$ rastro de IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Limpiar $COUNT$ rastros de IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (sin rastros de IA)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (no disponible para publicaciones con formato)"
+  },
+  "power_on": {
+    "message": "Activado"
+  },
+  "power_paused": {
+    "message": "En pausa"
+  },
+  "power_pause": {
+    "message": "Pausar en X y Typefully"
+  },
+  "power_resume": {
+    "message": "Activar para X y Typefully"
+  },
+  "placeholder": {
+    "message": "Pega texto con rastros de IA..."
+  },
+  "found_one": {
+    "message": "$COUNT$ rastro",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ rastros",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "limpio"
+  },
+  "found_copied": {
+    "message": "copiado"
+  },
+  "found_cleaned": {
+    "message": "limpiado"
+  },
+  "go_hint": {
+    "message": "Limpiar y copiar (⌘↵)"
+  },
+  "go_label": {
+    "message": "Limpiar y copiar"
+  },
+  "section_clean": {
+    "message": "Limpiar"
+  },
+  "rule_invisible": {
+    "message": "Ocultos"
+  },
+  "hint_invisible": {
+    "message": "Caracteres invisibles y marcas de agua tag"
+  },
+  "rule_spaces": {
+    "message": "Espacios"
+  },
+  "hint_spaces": {
+    "message": "Espacios de no separación, finos y anchos"
+  },
+  "rule_dashes": {
+    "message": "Rayas"
+  },
+  "hint_dashes": {
+    "message": "Guiones largos"
+  },
+  "rule_quotes": {
+    "message": "Comillas"
+  },
+  "hint_quotes": {
+    "message": "Comillas tipográficas y apóstrofos"
+  },
+  "rule_bullets": {
+    "message": "Viñetas"
+  },
+  "hint_bullets": {
+    "message": "Viñetas de lista"
+  },
+  "rule_fancy": {
+    "message": "Fantasía"
+  },
+  "hint_fancy": {
+    "message": "Letras Unicode en negrita/cursiva, puntos suspensivos"
+  },
+  "removed_one": {
+    "message": "$COUNT$ rastro eliminado",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ rastros eliminados",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privacidad"
+  }
+}

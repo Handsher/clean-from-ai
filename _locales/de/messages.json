@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Entfernt versteckte KI-Wasserzeichen und KI-Typografie aus deinen Beiträgen auf X und Typefully oder aus eingefügtem Text."
+  },
+  "btn_clean_one": {
+    "message": "$COUNT$ KI-Spur entfernen",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "$COUNT$ KI-Spuren entfernen",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (keine KI-Spuren gefunden)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (für formatierte Beiträge nicht verfügbar)"
+  },
+  "power_on": {
+    "message": "An"
+  },
+  "power_paused": {
+    "message": "Pausiert"
+  },
+  "power_pause": {
+    "message": "Auf X und Typefully pausieren"
+  },
+  "power_resume": {
+    "message": "Für X und Typefully einschalten"
+  },
+  "placeholder": {
+    "message": "Text mit KI-Spuren einfügen..."
+  },
+  "found_one": {
+    "message": "$COUNT$ Spur",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ Spuren",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "sauber"
+  },
+  "found_copied": {
+    "message": "kopiert"
+  },
+  "found_cleaned": {
+    "message": "bereinigt"
+  },
+  "go_hint": {
+    "message": "Bereinigen & kopieren (⌘↵)"
+  },
+  "go_label": {
+    "message": "Bereinigen und kopieren"
+  },
+  "section_clean": {
+    "message": "Bereinigen"
+  },
+  "rule_invisible": {
+    "message": "Versteckt"
+  },
+  "hint_invisible": {
+    "message": "Unsichtbare Zeichen und Tag-Wasserzeichen"
+  },
+  "rule_spaces": {
+    "message": "Leerzeichen"
+  },
+  "hint_spaces": {
+    "message": "Geschützte, schmale und breite Leerzeichen"
+  },
+  "rule_dashes": {
+    "message": "Gedankenstriche"
+  },
+  "hint_dashes": {
+    "message": "Lange Striche"
+  },
+  "rule_quotes": {
+    "message": "Anführungszeichen"
+  },
+  "hint_quotes": {
+    "message": "Typografische Anführungszeichen und Apostrophe"
+  },
+  "rule_bullets": {
+    "message": "Aufzählung"
+  },
+  "hint_bullets": {
+    "message": "Aufzählungszeichen"
+  },
+  "rule_fancy": {
+    "message": "Schmuckbuchstaben"
+  },
+  "hint_fancy": {
+    "message": "Fette/kursive Unicode-Buchstaben, Auslassungspunkte"
+  },
+  "removed_one": {
+    "message": "$COUNT$ Spur entfernt",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ Spuren entfernt",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "Datenschutz"
+  }
+}

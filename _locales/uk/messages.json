@@ -1,0 +1,182 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Прибирає приховані символи-водяні знаки ШІ та типографіку в стилі ШІ з ваших постів на X і Typefully або з будь-якого вставленого тексту."
+  },
+  "btn_clean_one": {
+    "message": "Прибрати $COUNT$ AI-ознаку",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_few": {
+    "message": "Прибрати $COUNT$ AI-ознаки",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_many": {
+    "message": "Прибрати $COUNT$ AI-ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Прибрати $COUNT$ AI-ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (AI-ознак не знайдено)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (недоступно для форматованих постів)"
+  },
+  "power_on": {
+    "message": "Увімкнено"
+  },
+  "power_paused": {
+    "message": "Пауза"
+  },
+  "power_pause": {
+    "message": "Призупинити на X і Typefully"
+  },
+  "power_resume": {
+    "message": "Увімкнути для X і Typefully"
+  },
+  "placeholder": {
+    "message": "Вставте текст з AI-ознаками..."
+  },
+  "found_one": {
+    "message": "$COUNT$ ознака",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_few": {
+    "message": "$COUNT$ ознаки",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_many": {
+    "message": "$COUNT$ ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "чисто"
+  },
+  "found_copied": {
+    "message": "скопійовано"
+  },
+  "found_cleaned": {
+    "message": "очищено"
+  },
+  "go_hint": {
+    "message": "Очистити й скопіювати (⌘↵)"
+  },
+  "go_label": {
+    "message": "Очистити й скопіювати"
+  },
+  "section_clean": {
+    "message": "Очищати"
+  },
+  "rule_invisible": {
+    "message": "Приховані"
+  },
+  "hint_invisible": {
+    "message": "Невидимі символи та tag-водяні знаки"
+  },
+  "rule_spaces": {
+    "message": "Пробіли"
+  },
+  "hint_spaces": {
+    "message": "Нерозривні, тонкі та широкі пробіли"
+  },
+  "rule_dashes": {
+    "message": "Тире"
+  },
+  "hint_dashes": {
+    "message": "Довгі тире"
+  },
+  "rule_quotes": {
+    "message": "Лапки"
+  },
+  "hint_quotes": {
+    "message": "Фігурні лапки й апострофи"
+  },
+  "rule_bullets": {
+    "message": "Маркери"
+  },
+  "hint_bullets": {
+    "message": "Маркери списку"
+  },
+  "rule_fancy": {
+    "message": "Фігурні"
+  },
+  "hint_fancy": {
+    "message": "Жирні/курсивні Unicode-літери, три крапки"
+  },
+  "removed_one": {
+    "message": "Прибрано $COUNT$ ознаку",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_few": {
+    "message": "Прибрано $COUNT$ ознаки",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_many": {
+    "message": "Прибрано $COUNT$ ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "Прибрано $COUNT$ ознак",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "приватність"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "XやTypefullyの投稿、または貼り付けたテキストから、隠れたAI透かし文字とAI特有の記号を取り除きます。"
+  },
+  "btn_clean_other": {
+    "message": "AIの痕跡 $COUNT$ 件を除去",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI（AIの痕跡なし）"
+  },
+  "btn_rich": {
+    "message": "Clean AI（書式付き投稿では使えません）"
+  },
+  "power_on": {
+    "message": "オン"
+  },
+  "power_paused": {
+    "message": "一時停止"
+  },
+  "power_pause": {
+    "message": "XとTypefullyで一時停止"
+  },
+  "power_resume": {
+    "message": "XとTypefullyで有効にする"
+  },
+  "placeholder": {
+    "message": "AIの痕跡があるテキストを貼り付け..."
+  },
+  "found_other": {
+    "message": "痕跡 $COUNT$ 件",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "クリーン"
+  },
+  "found_copied": {
+    "message": "コピー済み"
+  },
+  "found_cleaned": {
+    "message": "除去済み"
+  },
+  "go_hint": {
+    "message": "除去してコピー (⌘↵)"
+  },
+  "go_label": {
+    "message": "除去してコピー"
+  },
+  "section_clean": {
+    "message": "除去する項目"
+  },
+  "rule_invisible": {
+    "message": "隠し文字"
+  },
+  "hint_invisible": {
+    "message": "ゼロ幅文字とタグ透かし"
+  },
+  "rule_spaces": {
+    "message": "空白"
+  },
+  "hint_spaces": {
+    "message": "ノーブレーク、細い、広い空白"
+  },
+  "rule_dashes": {
+    "message": "ダッシュ"
+  },
+  "hint_dashes": {
+    "message": "長いダッシュ"
+  },
+  "rule_quotes": {
+    "message": "引用符"
+  },
+  "hint_quotes": {
+    "message": "カーリー引用符とアポストロフィ"
+  },
+  "rule_bullets": {
+    "message": "箇条書き"
+  },
+  "hint_bullets": {
+    "message": "箇条書き記号"
+  },
+  "rule_fancy": {
+    "message": "装飾文字"
+  },
+  "hint_fancy": {
+    "message": "太字/斜体のUnicode文字、三点リーダー"
+  },
+  "removed_other": {
+    "message": "痕跡 $COUNT$ 件を除去済み",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "プライバシー"
+  }
+}

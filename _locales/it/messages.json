@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Rimuove i caratteri nascosti di filigrana IA e la tipografia IA dai tuoi post su X e Typefully, o da qualsiasi testo incollato."
+  },
+  "btn_clean_one": {
+    "message": "Pulisci $COUNT$ traccia di IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Pulisci $COUNT$ tracce di IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (nessuna traccia di IA)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (non disponibile per post formattati)"
+  },
+  "power_on": {
+    "message": "Attivo"
+  },
+  "power_paused": {
+    "message": "In pausa"
+  },
+  "power_pause": {
+    "message": "Metti in pausa su X e Typefully"
+  },
+  "power_resume": {
+    "message": "Attiva per X e Typefully"
+  },
+  "placeholder": {
+    "message": "Incolla un testo con tracce di IA..."
+  },
+  "found_one": {
+    "message": "$COUNT$ traccia",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ tracce",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "pulito"
+  },
+  "found_copied": {
+    "message": "copiato"
+  },
+  "found_cleaned": {
+    "message": "pulito"
+  },
+  "go_hint": {
+    "message": "Pulisci e copia (⌘↵)"
+  },
+  "go_label": {
+    "message": "Pulisci e copia"
+  },
+  "section_clean": {
+    "message": "Pulisci"
+  },
+  "rule_invisible": {
+    "message": "Nascosti"
+  },
+  "hint_invisible": {
+    "message": "Caratteri invisibili e filigrane tag"
+  },
+  "rule_spaces": {
+    "message": "Spazi"
+  },
+  "hint_spaces": {
+    "message": "Spazi unificatori, sottili e larghi"
+  },
+  "rule_dashes": {
+    "message": "Trattini"
+  },
+  "hint_dashes": {
+    "message": "Trattini lunghi"
+  },
+  "rule_quotes": {
+    "message": "Virgolette"
+  },
+  "hint_quotes": {
+    "message": "Virgolette curve e apostrofi"
+  },
+  "rule_bullets": {
+    "message": "Elenchi"
+  },
+  "hint_bullets": {
+    "message": "Punti elenco"
+  },
+  "rule_fancy": {
+    "message": "Decorate"
+  },
+  "hint_fancy": {
+    "message": "Lettere Unicode in grassetto/corsivo, puntini di sospensione"
+  },
+  "removed_one": {
+    "message": "$COUNT$ traccia rimossa",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ tracce rimosse",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privacy"
+  }
+}

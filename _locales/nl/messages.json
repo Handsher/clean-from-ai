@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Verwijdert verborgen AI-watermerktekens en AI-typografie uit je posts op X en Typefully, of uit geplakte tekst."
+  },
+  "btn_clean_one": {
+    "message": "$COUNT$ AI-spoor opschonen",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "$COUNT$ AI-sporen opschonen",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (geen AI-sporen gevonden)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (niet beschikbaar voor opgemaakte posts)"
+  },
+  "power_on": {
+    "message": "Aan"
+  },
+  "power_paused": {
+    "message": "Gepauzeerd"
+  },
+  "power_pause": {
+    "message": "Pauzeren op X en Typefully"
+  },
+  "power_resume": {
+    "message": "Inschakelen voor X en Typefully"
+  },
+  "placeholder": {
+    "message": "Plak tekst met AI-sporen..."
+  },
+  "found_one": {
+    "message": "$COUNT$ spoor",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ sporen",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "schoon"
+  },
+  "found_copied": {
+    "message": "gekopieerd"
+  },
+  "found_cleaned": {
+    "message": "opgeschoond"
+  },
+  "go_hint": {
+    "message": "Opschonen en kopiëren (⌘↵)"
+  },
+  "go_label": {
+    "message": "Opschonen en kopiëren"
+  },
+  "section_clean": {
+    "message": "Opschonen"
+  },
+  "rule_invisible": {
+    "message": "Verborgen"
+  },
+  "hint_invisible": {
+    "message": "Onzichtbare tekens en tag-watermerken"
+  },
+  "rule_spaces": {
+    "message": "Spaties"
+  },
+  "hint_spaces": {
+    "message": "Harde, smalle en brede spaties"
+  },
+  "rule_dashes": {
+    "message": "Streepjes"
+  },
+  "hint_dashes": {
+    "message": "Lange streepjes"
+  },
+  "rule_quotes": {
+    "message": "Aanhalingstekens"
+  },
+  "hint_quotes": {
+    "message": "Gekrulde aanhalingstekens en apostrofs"
+  },
+  "rule_bullets": {
+    "message": "Opsommingen"
+  },
+  "hint_bullets": {
+    "message": "Opsommingstekens"
+  },
+  "rule_fancy": {
+    "message": "Sierletters"
+  },
+  "hint_fancy": {
+    "message": "Vette/cursieve Unicode-letters, beletselteken"
+  },
+  "removed_one": {
+    "message": "$COUNT$ spoor verwijderd",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ sporen verwijderd",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "privacy"
+  }
+}

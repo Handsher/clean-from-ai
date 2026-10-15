@@ -1,0 +1,134 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "Supprime les caractères de filigrane IA cachés et la typographie IA de vos posts sur X et Typefully, ou de tout texte collé."
+  },
+  "btn_clean_one": {
+    "message": "Nettoyer $COUNT$ trace d'IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_clean_other": {
+    "message": "Nettoyer $COUNT$ traces d'IA",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (aucune trace d'IA)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (indisponible pour les posts formatés)"
+  },
+  "power_on": {
+    "message": "Actif"
+  },
+  "power_paused": {
+    "message": "En pause"
+  },
+  "power_pause": {
+    "message": "Mettre en pause sur X et Typefully"
+  },
+  "power_resume": {
+    "message": "Activer pour X et Typefully"
+  },
+  "placeholder": {
+    "message": "Collez un texte avec des traces d'IA..."
+  },
+  "found_one": {
+    "message": "$COUNT$ trace",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_other": {
+    "message": "$COUNT$ traces",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "propre"
+  },
+  "found_copied": {
+    "message": "copié"
+  },
+  "found_cleaned": {
+    "message": "nettoyé"
+  },
+  "go_hint": {
+    "message": "Nettoyer et copier (⌘↵)"
+  },
+  "go_label": {
+    "message": "Nettoyer et copier"
+  },
+  "section_clean": {
+    "message": "Nettoyer"
+  },
+  "rule_invisible": {
+    "message": "Cachés"
+  },
+  "hint_invisible": {
+    "message": "Caractères invisibles et filigranes tag"
+  },
+  "rule_spaces": {
+    "message": "Espaces"
+  },
+  "hint_spaces": {
+    "message": "Espaces insécables, fines et larges"
+  },
+  "rule_dashes": {
+    "message": "Tirets"
+  },
+  "hint_dashes": {
+    "message": "Tirets longs"
+  },
+  "rule_quotes": {
+    "message": "Guillemets"
+  },
+  "hint_quotes": {
+    "message": "Guillemets courbes et apostrophes"
+  },
+  "rule_bullets": {
+    "message": "Puces"
+  },
+  "hint_bullets": {
+    "message": "Puces de liste"
+  },
+  "rule_fancy": {
+    "message": "Fantaisie"
+  },
+  "hint_fancy": {
+    "message": "Lettres Unicode grasses/italiques, points de suspension"
+  },
+  "removed_one": {
+    "message": "$COUNT$ trace supprimée",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "removed_other": {
+    "message": "$COUNT$ traces supprimées",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "confidentialité"
+  }
+}

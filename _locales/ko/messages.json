@@ -1,0 +1,110 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "X와 Typefully의 게시물 또는 붙여넣은 텍스트에서 숨겨진 AI 워터마크 문자와 AI 특유의 기호를 제거합니다."
+  },
+  "btn_clean_other": {
+    "message": "AI 흔적 $COUNT$개 제거",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI (AI 흔적 없음)"
+  },
+  "btn_rich": {
+    "message": "Clean AI (서식 있는 게시물에는 사용 불가)"
+  },
+  "power_on": {
+    "message": "켜짐"
+  },
+  "power_paused": {
+    "message": "일시중지"
+  },
+  "power_pause": {
+    "message": "X와 Typefully에서 일시중지"
+  },
+  "power_resume": {
+    "message": "X와 Typefully에서 켜기"
+  },
+  "placeholder": {
+    "message": "AI 흔적이 있는 텍스트를 붙여넣으세요..."
+  },
+  "found_other": {
+    "message": "흔적 $COUNT$개",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "깨끗함"
+  },
+  "found_copied": {
+    "message": "복사됨"
+  },
+  "found_cleaned": {
+    "message": "제거됨"
+  },
+  "go_hint": {
+    "message": "제거 후 복사 (⌘↵)"
+  },
+  "go_label": {
+    "message": "제거 후 복사"
+  },
+  "section_clean": {
+    "message": "제거 항목"
+  },
+  "rule_invisible": {
+    "message": "숨은 문자"
+  },
+  "hint_invisible": {
+    "message": "제로폭 문자와 태그 워터마크"
+  },
+  "rule_spaces": {
+    "message": "공백"
+  },
+  "hint_spaces": {
+    "message": "줄바꿈 없는, 좁은, 넓은 공백"
+  },
+  "rule_dashes": {
+    "message": "대시"
+  },
+  "hint_dashes": {
+    "message": "긴 대시"
+  },
+  "rule_quotes": {
+    "message": "따옴표"
+  },
+  "hint_quotes": {
+    "message": "둥근 따옴표와 아포스트로피"
+  },
+  "rule_bullets": {
+    "message": "글머리 기호"
+  },
+  "hint_bullets": {
+    "message": "목록 글머리 기호"
+  },
+  "rule_fancy": {
+    "message": "장식 문자"
+  },
+  "hint_fancy": {
+    "message": "굵은/기울임 유니코드 문자, 줄임표"
+  },
+  "removed_other": {
+    "message": "흔적 $COUNT$개 제거됨",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "개인정보"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "action_title": {
+    "message": "Clean from AI"
+  },
+  "ext_description": {
+    "message": "清除你在 X 和 Typefully 上的帖子或任何粘贴文本中隐藏的 AI 水印字符和 AI 排版痕迹。"
+  },
+  "btn_clean_other": {
+    "message": "清除 $COUNT$ 处 AI 痕迹",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "btn_none": {
+    "message": "Clean AI（未发现 AI 痕迹）"
+  },
+  "btn_rich": {
+    "message": "Clean AI（不支持带格式的帖子）"
+  },
+  "power_on": {
+    "message": "已开启"
+  },
+  "power_paused": {
+    "message": "已暂停"
+  },
+  "power_pause": {
+    "message": "在 X 和 Typefully 上暂停"
+  },
+  "power_resume": {
+    "message": "为 X 和 Typefully 开启"
+  },
+  "placeholder": {
+    "message": "粘贴带有 AI 痕迹的文本..."
+  },
+  "found_other": {
+    "message": "$COUNT$ 处痕迹",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "found_clean": {
+    "message": "干净"
+  },
+  "found_copied": {
+    "message": "已复制"
+  },
+  "found_cleaned": {
+    "message": "已清除"
+  },
+  "go_hint": {
+    "message": "清除并复制 (⌘↵)"
+  },
+  "go_label": {
+    "message": "清除并复制"
+  },
+  "section_clean": {
+    "message": "清除项目"
+  },
+  "rule_invisible": {
+    "message": "隐藏字符"
+  },
+  "hint_invisible": {
+    "message": "零宽字符和标签水印"
+  },
+  "rule_spaces": {
+    "message": "空格"
+  },
+  "hint_spaces": {
+    "message": "不换行、窄和宽空格"
+  },
+  "rule_dashes": {
+    "message": "破折号"
+  },
+  "hint_dashes": {
+    "message": "长破折号"
+  },
+  "rule_quotes": {
+    "message": "引号"
+  },
+  "hint_quotes": {
+    "message": "弯引号和撇号"
+  },
+  "rule_bullets": {
+    "message": "项目符号"
+  },
+  "hint_bullets": {
+    "message": "列表项目符号"
+  },
+  "rule_fancy": {
+    "message": "花体字"
+  },
+  "hint_fancy": {
+    "message": "粗体/斜体 Unicode 字母、省略号"
+  },
+  "removed_other": {
+    "message": "已清除 $COUNT$ 处痕迹",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "privacy": {
+    "message": "隐私"
+  }
+}
