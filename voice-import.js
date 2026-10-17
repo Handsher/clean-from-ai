@@ -18,7 +18,9 @@ export function buildVoice(files) {
         if (typeof row?.text !== 'string' || ('src' in row && row.src !== 'self')) continue; // other people: not your voice
         const t = row.text.replace(/^(@\w+\s*)+/, '').replace(/https?:\/\/\S+/g, '').trim();
         // essays and long dashes are mostly drafts written with AI: they would teach the opposite of the goal
-        if (t.length >= 3 && t.length <= 280 && !/[—–]/.test(t)) posts.push({ t, when: Date.parse(row.created) || 0 });
+        // 2+ lines ending in a period is the same tell voice_check.py fails on: an essay, not a post
+        const periods = t.split('\n').filter(l => l.trimEnd().endsWith('.')).length;
+        if (t.length >= 3 && t.length <= 280 && !/[—–]/.test(t) && periods < 2) posts.push({ t, when: Date.parse(row.created) || 0 });
       }
     }
   }
@@ -28,6 +30,6 @@ export function buildVoice(files) {
   const recent = posts.filter(p => !p.when || !newest || newest - p.when <= 365 * 864e5);
   const mine = [...new Map(recent.sort((a, b) => b.when - a.when).map(p => [p.t, p])).values()].map(p => p.t); // newest first
   let out = notes.join('\n\n');
-  if (mine.length) out += `\n\n# Posts and replies I actually wrote, newest first\n` + mine.map(t => '- ' + t.replace(/\s*\n+\s*/g, ' / ')).join('\n');
+  if (mine.length) out += `\n\n# Posts and replies I wrote, newest first (style examples: copy how they're written, never the facts, numbers or stories in them, which may be old)\n` + mine.map(t => '- ' + t.replace(/\s*\n+\s*/g, ' / ')).join('\n');
   return { text: out.slice(0, VOICE_LIMIT).trim(), notes: notes.length, posts: mine.length };
 }

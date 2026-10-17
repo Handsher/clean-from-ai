@@ -44,12 +44,13 @@ import('./voice-import.js').then(({ buildVoice }) => {
       row('someone else wrote this', 'circle', 'Fri Oct 16 12:00:00 +0000 2026'),
       row('an essay — written with AI', 'self', 'Fri Oct 16 12:00:00 +0000 2026'),
       row('GM yappers #MEME', 'self', 'Mon Jan 17 12:00:00 +0000 2024'),
+      row('opened the analytics.\n43.5K impressions.\nwe keep going.', 'self', 'Fri Oct 16 12:00:00 +0000 2026'),
       'not json',
     ].join('\n') },
     { name: 'script.py', text: 'print(1)' },
   ]);
   assert.equal(v.notes, 1);
   assert.equal(v.posts, 1);
-  assert.ok(v.text.includes('- nice one)') && !/someone else|essay|yappers|print/.test(v.text));
+  assert.ok(v.text.includes('- nice one)') && !/someone else|essay|yappers|print|43\.5K/.test(v.text));
   console.log('voice import ok');
 });
