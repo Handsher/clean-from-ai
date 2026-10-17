@@ -1,6 +1,9 @@
-// node test.js
+// node test.cjs  (or npm test)
 const assert = require('assert');
-const { clean, analyze, sanitizeSettings } = require('./clean.js');
+// clean.js is a plain browser script; package.json's "type": "module" stops require() from seeing its exports, so load it by hand.
+const loaded = { exports: {} };
+new Function('module', require('fs').readFileSync(require('path').join(__dirname, 'clean.js'), 'utf8'))(loaded);
+const { clean, analyze, sanitizeSettings } = loaded.exports;
 
 // settings from storage: only booleans and known rule names survive
 assert.deepEqual(sanitizeSettings(undefined), { enabled: true, rules: {} });

@@ -24,7 +24,7 @@ Cleaning is fully offline. The only network call is the AI reply you click, stra
 | `clean.js` | The cleaning rules. Pure function, shared by everything. |
 | `content.js` | Adds the eraser button to X and Typefully editors. |
 | `popup.html/js/css` | The window that opens from the toolbar icon. |
-| `test.js` | `node test.js` — checks the rules on emoji, flags, Ukrainian, watermarks. |
+| `test.cjs` | `node test.cjs` — checks the rules on emoji, flags, Ukrainian, watermarks. |
 | `background.js`, `reply-prompt.js` | The AI reply: the Claude request (prompt, images, frames) and the API call. |
 | `options.html/js/css` | Settings: API key, your voice, AI replies on/off. |
 | `vendor/anthropic.js` | Anthropic's official SDK, bundled (`npm ci && npm run build`). |
