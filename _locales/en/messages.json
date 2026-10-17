@@ -222,5 +222,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Write an idea or attach media first: Claude turns it into a post"
+  },
+  "opt_xkey": {
+    "message": "X data key (optional)"
+  },
+  "opt_xkey_hint": {
+    "message": "A twitterapi.io key. With it, a reply also sees the author's bio, the post above in the thread and the most liked replies so far, so it understands the conversation. Stored only in this browser; adds a fraction of a cent per reply."
   }
 }

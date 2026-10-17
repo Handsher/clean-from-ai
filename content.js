@@ -178,7 +178,9 @@ async function readPost(article) {
   const video = article.querySelector('video');
   if (video?.poster?.startsWith('https://pbs.twimg.com/')) images.push(video.poster);
   const clip = video ? await videoFrames(video) : {};
+  const link = article.querySelector('a[href*="/status/"] time')?.closest('a')?.getAttribute('href') || '';
   return {
+    id: (link.match(/\/status\/(\d+)/) || [])[1], // lets background.js fetch the thread and other replies
     author,
     text: texts[0]?.innerText || '',
     quoted: texts[1]?.innerText || '',

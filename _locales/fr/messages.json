@@ -222,5 +222,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Écrivez d'abord une idée ou joignez un média : Claude en fait un post"
+  },
+  "opt_xkey": {
+    "message": "Clé de données X (facultatif)"
+  },
+  "opt_xkey_hint": {
+    "message": "Une clé twitterapi.io. Avec elle, une réponse voit aussi la bio de l'auteur, le post au-dessus dans le fil et les réponses les plus aimées, pour comprendre la conversation. Stockée uniquement dans ce navigateur ; ajoute une fraction de centime par réponse."
   }
 }

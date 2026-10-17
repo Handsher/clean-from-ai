@@ -222,5 +222,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Escribe primero una idea o adjunta un archivo: Claude lo convierte en una publicación"
+  },
+  "opt_xkey": {
+    "message": "Clave de datos de X (opcional)"
+  },
+  "opt_xkey_hint": {
+    "message": "Una clave de twitterapi.io. Con ella, la respuesta ve también la bio del autor, la publicación anterior del hilo y las respuestas con más likes, para entender la conversación. Se guarda solo en este navegador; suma una fracción de centavo por respuesta."
   }
 }

@@ -38,19 +38,20 @@
   </header>
 
   <h1>Privacy Policy</h1>
-  <div class="date">Effective 17 October 2026 · v3.4.0</div>
+  <div class="date">Effective 17 October 2026 · v3.5.0</div>
 
   <p>Clean from AI removes hidden AI watermark characters and AI-style typography (long dashes, curly quotes, fancy Unicode letters) from the posts you write on X and Typefully, and from any text you paste into the extension's popup. Optionally, it can draft a reply to a post on X with Claude, using your own Anthropic API key.</p>
 
   <div class="card"><b>Cleaning never leaves your browser</b>Cleaning text runs entirely on your computer. The text you clean is never sent anywhere and never saved.</div>
   <div class="card"><b>AI replies send one post to Anthropic, only when you click</b>The AI reply feature is off until you add your own Anthropic API key. When you click the Reply with AI button under a post, the extension sends that post's text, its author's handle, links to its images and up to 8 still frames from its video, together with the voice description you wrote in settings, to Anthropic's API using your key. When you click Write with AI in the post box, your draft and the pictures or video frames you attached go the same way. Nothing is sent automatically, and nothing is sent to us: there is no server of ours in between. Anthropic processes the request under <a href="https://www.anthropic.com/legal/privacy">its own privacy policy</a> and your API agreement with it.</div>
-  <div class="card"><b>Your API key stays on this computer</b>The key is kept in the extension's local storage on this device (it is not synced to other devices), is sent only to api.anthropic.com, and is never shown back on any page. Remove it at any time in settings.</div>
+  <div class="card"><b>Optional X context, also only on click</b>If you add a twitterapi.io key in settings, clicking Reply with AI also asks twitterapi.io, with your key, for public details of that post: its author's bio, the post it answers and the most liked replies so far. Only the post's ID is sent to twitterapi.io. Without that key, nothing goes there.</div>
+  <div class="card"><b>Your API keys stay on this computer</b>The key is kept in the extension's local storage on this device (it is not synced to other devices), is sent only to api.anthropic.com, and is never shown back on any page. Remove it at any time in settings.</div>
   <div class="card"><b>It only reads what you ask it to</b>On x.com and typefully.com the extension reads the post editor you have clicked into, to count and clean AI tells. It reads another person's post only at the moment you click Reply with AI under it. It does not read password fields, direct-message history, cookies or your clipboard.</div>
 
   <h2>What is stored</h2>
   <ul>
     <li>Synced with your browser account: which cleaning rules are on, whether cleaning and AI replies are switched on.</li>
-    <li>On this device only: your API key, your voice description and a running count of cleaned characters.</li>
+    <li>On this device only: your Anthropic API key, your optional twitterapi.io key, your voice description and a running count of cleaned characters.</li>
   </ul>
 
   <h2>Permissions</h2>
@@ -58,10 +59,11 @@
     <li><code>storage</code> — to keep the settings listed above.</li>
     <li>Access to <code>x.com</code>, <code>twitter.com</code> and <code>typefully.com</code> — to add the Clean AI and Reply with AI buttons on those sites only.</li>
     <li>Access to <code>api.anthropic.com</code> — to send a reply request when you click Reply with AI.</li>
+    <li>Access to <code>api.twitterapi.io</code> — only if you add its key, to read the post's public context when you click Reply with AI.</li>
   </ul>
 
   <h2>Third parties</h2>
-  <p>Anthropic, only for AI replies and only with your key, as described above. No analytics, no trackers, no fonts or scripts loaded from external servers. The one library inside the extension, Anthropic's official SDK, is bundled into the package you install.</p>
+  <p>Anthropic, only for AI replies and only with your key, as described above. twitterapi.io, only if you add its key, as described above. No analytics, no trackers, no fonts or scripts loaded from external servers. The one library inside the extension, Anthropic's official SDK, is bundled into the package you install.</p>
 
   <h2>Open source</h2>
   <p>The complete source code is public, so every claim on this page can be checked: <a href="https://github.com/Handsher/clean-from-ai">github.com/Handsher/clean-from-ai</a>. A security review of the current version is in <a href="https://github.com/Handsher/clean-from-ai/blob/main/SECURITY-AUDIT.md">SECURITY-AUDIT.md</a>.</p>

@@ -35,6 +35,19 @@
   </section>
 
   <section>
+    <label class="label" for="xkey" data-i18n="opt_xkey">X data key (optional)</label>
+    <div class="field">
+      <input id="xkey" type="password" autocomplete="off" spellcheck="false" placeholder="twitterapi.io">
+      <button id="saveX" type="button" class="primary" data-i18n="opt_save">Save</button>
+    </div>
+    <div class="actions">
+      <button id="removeX" type="button" class="link" data-i18n="opt_remove">Remove</button>
+      <span id="xStatus" class="found" role="status"></span>
+    </div>
+    <p class="hint" data-i18n="opt_xkey_hint"></p>
+  </section>
+
+  <section>
     <label class="label" for="voice" data-i18n="opt_voice">Your voice</label>
     <textarea id="voice" class="voice" rows="9" spellcheck="false"></textarea>
     <div class="actions">

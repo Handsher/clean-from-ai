@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Clean from AI",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "default_locale": "en",
   "homepage_url": "https://handsher.github.io/clean-from-ai/",
   "description": "__MSG_ext_description__",
@@ -28,7 +28,8 @@
     "storage"
   ],
   "host_permissions": [
-    "https://api.anthropic.com/*"
+    "https://api.anthropic.com/*",
+    "https://api.twitterapi.io/*"
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"

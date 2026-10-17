@@ -222,5 +222,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Schreib zuerst eine Idee oder hänge Medien an: Claude macht daraus einen Beitrag"
+  },
+  "opt_xkey": {
+    "message": "X-Datenschlüssel (optional)"
+  },
+  "opt_xkey_hint": {
+    "message": "Ein twitterapi.io-Schlüssel. Damit sieht eine Antwort auch die Bio des Autors, den Beitrag darüber im Thread und die beliebtesten Antworten, versteht also das Gespräch. Nur in diesem Browser gespeichert; kostet Bruchteile eines Cents pro Antwort."
   }
 }

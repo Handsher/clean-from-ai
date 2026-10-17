@@ -7,6 +7,7 @@ Browser extension that strips hidden AI watermark characters and AI-style typogr
 - **Live counter** — a badge on the eraser button shows how many AI tells are in your draft.
 - **Popup** — paste any text, clean it, copy it. Switch any rule group off.
 - **Reply with AI** — a ✦ button under every post on X. Claude Opus 5.5 reads the post, its images and 8 timestamped frames from its video, writes a reply in your voice, the cleaner cleans it, and it lands in X's reply box. You post it yourself. Needs your own Anthropic API key (about 1 cent per reply).
+- **Knows the conversation** — with an optional twitterapi.io key, a reply also sees the author's bio, the post above in the thread and the most liked replies, and looks for an angle nobody took.
 - **Write with AI** — a ✦ next to the eraser in the post box. Type an idea in any language (or just attach media), click, and it becomes a post in your voice; every fact in your draft stays. Cmd+Z brings your draft back.
 - **15 languages** — English, Ukrainian, German, French, Spanish, Portuguese (BR), Italian, Polish, Dutch, Turkish, Japanese, Korean, Chinese (Simplified), Hindi, Indonesian. Add one by copying `_locales/en`.
 
@@ -31,6 +32,7 @@ Cleaning is fully offline. The only network call is the AI reply you click, stra
 | `voice-import.js` | "Load voice folder": builds your voice from notes (.md/.txt) and your own posts (.jsonl) from the last 12 months; other people's posts are skipped. |
 | `vendor/anthropic.js` | Anthropic's official SDK, bundled (`npm ci && npm run build`). |
 | `tools/try-replies.mjs` | Try the reply prompt on real posts from the terminal. |
+| `tools/eval-replies.mjs` | Blind test on your own real replies, held out: how well generated replies match your voice and get the post. |
 | `docs/` | The privacy policy page (GitHub Pages). |
 
 ## License

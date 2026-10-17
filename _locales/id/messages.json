@@ -198,5 +198,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Tulis ide atau lampirkan media dulu: Claude mengubahnya menjadi postingan"
+  },
+  "opt_xkey": {
+    "message": "Kunci data X (opsional)"
+  },
+  "opt_xkey_hint": {
+    "message": "Kunci twitterapi.io. Dengan ini, balasan juga melihat bio penulis, postingan di atasnya dalam utas, dan balasan yang paling disukai, sehingga memahami percakapannya. Hanya disimpan di browser ini; menambah sepersekian sen per balasan."
   }
 }

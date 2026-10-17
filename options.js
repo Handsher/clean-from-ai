@@ -41,6 +41,21 @@ $('remove').addEventListener('click', async () => {
   status('keyStatus', t('opt_key_removed'), true);
 });
 
+$('saveX').addEventListener('click', async () => {
+  const xKey = $('xkey').value.trim();
+  if (!xKey) return;
+  await chrome.storage.local.set({ xKey });
+  $('xkey').value = '';
+  $('xkey').placeholder = '•••• ' + xKey.slice(-4);
+  status('xStatus', t('opt_saved'), true);
+});
+
+$('removeX').addEventListener('click', async () => {
+  await chrome.storage.local.remove(['xKey']);
+  $('xkey').placeholder = 'twitterapi.io';
+  status('xStatus', t('opt_key_removed'), true);
+});
+
 $('saveVoice').addEventListener('click', async () => {
   await chrome.storage.local.set({ voice: $('voice').value.slice(0, VOICE_LIMIT) });
   status('voiceStatus', t('opt_saved'), true);
@@ -60,7 +75,8 @@ $('folder').addEventListener('change', async e => {
 });
 
 chrome.storage.sync.get({ replies: true }).then(s => renderReplies(s.replies !== false));
-chrome.storage.local.get({ apiKey: '', voice: '' }).then(s => {
+chrome.storage.local.get({ apiKey: '', xKey: '', voice: '' }).then(s => {
   if (s.apiKey) $('key').placeholder = '•••• ' + s.apiKey.slice(-4); // never put the key itself back on the page
+  if (s.xKey) $('xkey').placeholder = '•••• ' + s.xKey.slice(-4);
   $('voice').value = s.voice;
 });

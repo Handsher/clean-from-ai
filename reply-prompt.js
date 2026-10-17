@@ -14,13 +14,13 @@ Never invent facts about the user beyond what the voice says, and never claim an
 
 Video comes as frames with their timestamps. Read them as a sequence: what happens, what changes from frame to frame, what's shown on screen (text, UI, product, people, result). Images may be screenshots: read the text and numbers in them.`;
 
+// Voice-first: on 20 of the user's real replies held out (tools/eval-replies.mjs), this scored voice 7.0 vs 5.6 for
+// the "add a sharp take" version, close to the user's own 7.2, while still reading the post better than the user did.
 const REPLY = `You write one reply to a post on X, as the user. Output only the reply text: no quotes around it, no preamble, no alternatives.
 
-Start from the post's point. Read the text first and work out what the author is actually saying or asking, and what they would want to hear back. Images and video are evidence for that point (a screenshot of stats, a demo, a result): read them closely and use a detail when it sharpens your take, but don't let the loudest number or thing in an image replace what the post is about.
+Start from the post's point: work out what the author is actually saying or asking and what they would want to hear back. Images and video are evidence for it: read them closely, but don't let the loudest number or thing in an image replace what the post is about.
 
-Before writing, find the most interesting specific thing in this post (in the text, an image or the video) and what a sharp founder who builds in the same space would add to it.
-
-A good reply answers or reacts to the post's point and adds something real: an observation that shows you understood it, a take, a useful tip, a joke that lands on a detail, or a real question. A bare reaction ("bro it's 9.1M)", "wild...", "i don't think so man)") is not enough. Usually one line, sometimes two, roughly 50 to 140 characters. If the user wrote what they want to say, say that, in their voice. Reply in the language of the post.`;
+Then answer the way the user answers people (see "How I replied to real posts" in the voice): the same length, usually one short line; the same directness and warmth; the same kind of thing they pick up on. The understanding shows in what you react to, not in how much you write: a short reply that gets the point beats a clever one. Don't try to be witty or insightful unless that is how the user replies. If the user wrote what they want to say, say that. Reply in the language of the post.`;
 
 const POST = `You write one post for X, as the user. Output only the post text: no quotes around it, no preamble, no alternatives.
 
@@ -50,9 +50,22 @@ function media({ images = [], frames = [], duration } = {}, label) {
   return blocks;
 }
 
-// input: { kind: 'reply', post: { author, text, quoted, images, frames, duration }, draft? }
+// Optional context from the X API: who the author is, the posts above in the thread, what others already replied.
+function context(c) {
+  if (!c) return [];
+  const line = p => `@${p.author || 'unknown'}${p.likes ? ` (${p.likes} likes)` : ''}: ${p.text.replace(/\s*\n+\s*/g, ' / ').slice(0, 280)}`;
+  return [
+    c.bio ? tag('author_bio', c.bio) : '',
+    c.thread?.length ? tag('thread_above', c.thread.map(line).join('\n')) + '\nThe post replies to these.' : '',
+    c.replies?.length ? tag('other_replies', c.replies.slice(0, 15).map(line).join('\n'))
+      + '\nWhat others already replied, most liked first. Use it to understand the conversation and find an angle nobody took; never repeat or copy them.' : '',
+  ].filter(Boolean);
+}
+
+// input: { kind: 'reply', post: { author, text, quoted, images, frames, duration }, draft?, context? }
 //      | { kind: 'post', draft, media?: { images, frames, duration } }
-export function buildRequest(input, voice = '') {
+// opts.reply: replace the reply instructions (tools/eval-replies.mjs compares prompt versions with it)
+export function buildRequest(input, voice = '', opts = {}) {
   const reply = input.kind !== 'post';
   const post = input.post || {};
   const content = reply
@@ -60,6 +73,7 @@ export function buildRequest(input, voice = '') {
         ...media(post, "The post's video"),
         { type: 'text', text: [
           `Author: @${post.author || 'unknown'}`,
+          ...context(input.context),
           tag('post', post.text || '(no text)'),
           post.quoted ? tag('quoted_post', post.quoted) : '',
           input.draft?.trim() ? tag('what_i_want_to_say', input.draft) : '',
@@ -78,7 +92,7 @@ export function buildRequest(input, voice = '') {
     fallbacks: 'default', // a safety decline is re-run on Anthropic's recommended fallback model
     // the voice is the big, stable part: cached, so after the first request it costs a tenth
     system: [{ type: 'text', text: RULES + '\n\n' + tag('voice', voice.trim() || DEFAULT_VOICE), cache_control: { type: 'ephemeral' } },
-             { type: 'text', text: reply ? REPLY : POST }],
+             { type: 'text', text: reply ? (opts.reply || REPLY) : POST }],
     messages: [{ role: 'user', content }],
   };
 }

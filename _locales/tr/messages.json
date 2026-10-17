@@ -198,5 +198,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Önce bir fikir yazın veya medya ekleyin: Claude bunu bir gönderiye dönüştürür"
+  },
+  "opt_xkey": {
+    "message": "X veri anahtarı (isteğe bağlı)"
+  },
+  "opt_xkey_hint": {
+    "message": "Bir twitterapi.io anahtarı. Bununla yanıt, yazarın biyografisini, dizideki üstteki gönderiyi ve en çok beğenilen yanıtları da görür, böylece konuşmayı anlar. Yalnızca bu tarayıcıda saklanır; yanıt başına bir sentin çok küçük bir kısmını ekler."
   }
 }

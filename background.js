@@ -33,9 +33,30 @@ async function client() {
 }
 
 async function generate(input) {
-  const { voice } = await chrome.storage.local.get({ voice: '' });
-  const res = await (await client()).beta.messages.create(buildRequest(input, voice));
+  const { voice, xKey } = await chrome.storage.local.get({ voice: '', xKey: '' });
+  const anthropic = await client();
+  if (input.kind === 'reply' && xKey && /^\d+$/.test(input.post?.id || '')) input = { ...input, context: await xContext(input.post.id, xKey) };
+  const res = await anthropic.beta.messages.create(buildRequest(input, voice));
   return { text: replyText(res), usage: { input: res.usage.input_tokens, output: res.usage.output_tokens } };
+}
+
+// Optional context from X (twitterapi.io, the user's own key): the author's bio, the post it answers, and the most
+// liked replies so far. On held-out tests it lifted how well replies understood the post. Any failure here is
+// ignored: the reply is still written, just without the extra context.
+async function xContext(id, key) {
+  const get = (path, params) => fetch(`https://api.twitterapi.io/twitter/${path}?${new URLSearchParams(params)}`, {
+    headers: { 'X-API-Key': key }, signal: AbortSignal.timeout(6000),
+  }).then(r => (r.ok ? r.json() : {})).catch(() => ({}));
+  const strip = t => (t || '').replace(/^(@\w+\s*)+/, '').replace(/https?:\/\/\S+/g, '').trim();
+  const [one, rep] = await Promise.all([get('tweets', { tweet_ids: id }), get('tweet/replies/v2', { tweetId: id, queryType: 'Likes' })]);
+  const post = one.tweets?.[0];
+  const parent = post?.inReplyToId ? (await get('tweets', { tweet_ids: post.inReplyToId })).tweets?.[0] : null;
+  const replies = (rep.tweets || rep.data?.tweets || []).filter(t => t.id !== id).map(t => ({ author: t.author?.userName, text: strip(t.text), likes: t.likeCount || 0 })).filter(r => r.text);
+  return {
+    bio: post?.author?.description || '',
+    thread: parent ? [{ author: parent.author?.userName, text: parent.text || '' }] : [],
+    replies: replies.slice(0, 15),
+  };
 }
 
 async function test() {

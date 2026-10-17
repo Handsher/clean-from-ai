@@ -270,5 +270,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Najpierw wpisz pomysł lub dodaj multimedia: Claude zrobi z tego post"
+  },
+  "opt_xkey": {
+    "message": "Klucz danych X (opcjonalnie)"
+  },
+  "opt_xkey_hint": {
+    "message": "Klucz twitterapi.io. Dzięki niemu odpowiedź widzi też bio autora, post wyżej w wątku i najczęściej lajkowane odpowiedzi, więc rozumie rozmowę. Przechowywany tylko w tej przeglądarce; dodaje ułamek centa do odpowiedzi."
   }
 }

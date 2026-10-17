@@ -222,5 +222,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "Schrijf eerst een idee of voeg media toe: Claude maakt er een post van"
+  },
+  "opt_xkey": {
+    "message": "X-gegevenssleutel (optioneel)"
+  },
+  "opt_xkey_hint": {
+    "message": "Een twitterapi.io-sleutel. Daarmee ziet een antwoord ook de bio van de auteur, de post erboven in de thread en de meest gelikete antwoorden, zodat het het gesprek snapt. Alleen in deze browser opgeslagen; kost een fractie van een cent per antwoord."
   }
 }

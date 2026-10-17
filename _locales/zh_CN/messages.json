@@ -198,5 +198,11 @@
   },
   "reply_error_EMPTY_DRAFT": {
     "message": "请先写下想法或添加媒体，Claude 会把它变成一条帖子"
+  },
+  "opt_xkey": {
+    "message": "X 数据密钥（可选）"
+  },
+  "opt_xkey_hint": {
+    "message": "一个 twitterapi.io 密钥。有了它，回复时还会看到作者简介、串中上一条帖子以及点赞最多的回复，从而理解整段对话。只保存在此浏览器中；每条回复只多花不到一美分。"
   }
 }
