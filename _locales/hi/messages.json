@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "AI जवाब"
+  },
+  "opt_import": {
+    "message": "शैली फ़ोल्डर लोड करें"
+  },
+  "opt_imported": {
+    "message": "$NOTES$ नोट और आपकी $POSTS$ पोस्ट लोड हुईं। दूसरों की पोस्ट छोड़ दी गईं।",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

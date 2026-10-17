@@ -178,5 +178,19 @@
   },
   "popup_settings": {
     "message": "Balasan AI"
+  },
+  "opt_import": {
+    "message": "Muat folder gaya"
+  },
+  "opt_imported": {
+    "message": "Dimuat $NOTES$ catatan dan $POSTS$ postingan Anda. Postingan orang lain dilewati.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

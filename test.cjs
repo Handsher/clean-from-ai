@@ -33,3 +33,23 @@ assert.equal(analyze('plain text').count, 0);
 assert.equal(clean('“x” — y', { quotes: false }), '“x” - y');
 assert.equal(clean('“x” — y', { dashes: false, quotes: false }), '“x” — y');
 console.log('ok');
+
+// voice folder import: own posts only, no AI-ish essays, only the last 12 months
+import('./voice-import.js').then(({ buildVoice }) => {
+  const row = (text, src, created) => JSON.stringify({ text, src, created });
+  const v = buildVoice([
+    { name: 'VOICE.md', text: 'short, lowercase' },
+    { name: 'posts.jsonl', text: [
+      row('@bob nice one)', 'self', 'Fri Oct 16 12:00:00 +0000 2026'),
+      row('someone else wrote this', 'circle', 'Fri Oct 16 12:00:00 +0000 2026'),
+      row('an essay — written with AI', 'self', 'Fri Oct 16 12:00:00 +0000 2026'),
+      row('GM yappers #MEME', 'self', 'Mon Jan 17 12:00:00 +0000 2024'),
+      'not json',
+    ].join('\n') },
+    { name: 'script.py', text: 'print(1)' },
+  ]);
+  assert.equal(v.notes, 1);
+  assert.equal(v.posts, 1);
+  assert.ok(v.text.includes('- nice one)') && !/someone else|essay|yappers|print/.test(v.text));
+  console.log('voice import ok');
+});

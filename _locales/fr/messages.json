@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "Réponses IA"
+  },
+  "opt_import": {
+    "message": "Charger un dossier de style"
+  },
+  "opt_imported": {
+    "message": "Chargé : $NOTES$ notes et $POSTS$ de vos posts. Les posts des autres sont ignorés.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

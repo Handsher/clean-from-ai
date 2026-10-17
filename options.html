@@ -39,6 +39,8 @@
     <textarea id="voice" class="voice" rows="9" spellcheck="false"></textarea>
     <div class="actions">
       <button id="saveVoice" type="button" class="primary" data-i18n="opt_save">Save</button>
+      <button id="importVoice" type="button" class="link" data-i18n="opt_import">Load voice folder</button>
+      <input id="folder" type="file" webkitdirectory multiple hidden>
       <span id="voiceStatus" class="found" role="status"></span>
     </div>
     <p class="hint" data-i18n="opt_voice_hint"></p>
@@ -47,6 +49,6 @@
   <p class="privacy" data-i18n="opt_privacy"></p>
 
   <script src="i18n.js"></script>
-  <script src="options.js"></script>
+  <script type="module" src="options.js"></script>
 </body>
 </html>

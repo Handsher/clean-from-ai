@@ -178,5 +178,19 @@
   },
   "popup_settings": {
     "message": "AI 回复"
+  },
+  "opt_import": {
+    "message": "载入语气文件夹"
+  },
+  "opt_imported": {
+    "message": "已载入 $NOTES$ 条笔记和 $POSTS$ 条你的帖子。他人的帖子已跳过。",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

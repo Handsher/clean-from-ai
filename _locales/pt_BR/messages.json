@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "Respostas com IA"
+  },
+  "opt_import": {
+    "message": "Carregar pasta de estilo"
+  },
+  "opt_imported": {
+    "message": "Carregadas $NOTES$ notas e $POSTS$ posts seus. Posts de outras pessoas são ignorados.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

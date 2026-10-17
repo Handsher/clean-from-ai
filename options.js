@@ -1,4 +1,5 @@
 // Settings for AI replies. The API key goes to chrome.storage.local only (never sync), so it stays on this computer.
+import { buildVoice, VOICE_LIMIT } from './voice-import.js';
 
 const $ = id => document.getElementById(id);
 
@@ -41,8 +42,21 @@ $('remove').addEventListener('click', async () => {
 });
 
 $('saveVoice').addEventListener('click', async () => {
-  await chrome.storage.local.set({ voice: $('voice').value.slice(0, 8000) });
+  await chrome.storage.local.set({ voice: $('voice').value.slice(0, VOICE_LIMIT) });
   status('voiceStatus', t('opt_saved'), true);
+});
+
+// A whole folder (for example x-posting/voice): notes + the user's own posts, read here, never uploaded as files.
+$('importVoice').addEventListener('click', () => $('folder').click());
+$('folder').addEventListener('change', async e => {
+  const picked = [...e.target.files].filter(f => /\.(md|txt|jsonl)$/i.test(f.name) && f.size < 20e6);
+  const files = await Promise.all(picked.map(async f => ({ name: f.name, text: await f.text() })));
+  const voice = buildVoice(files);
+  e.target.value = '';
+  if (!voice.text) return status('voiceStatus', t('reply_error_EMPTY'), false);
+  $('voice').value = voice.text;
+  await chrome.storage.local.set({ voice: voice.text });
+  status('voiceStatus', t('opt_imported', [String(voice.notes), String(voice.posts)]), true);
 });
 
 chrome.storage.sync.get({ replies: true }).then(s => renderReplies(s.replies !== false));

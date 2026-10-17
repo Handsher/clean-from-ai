@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "KI-Antworten"
+  },
+  "opt_import": {
+    "message": "Stil-Ordner laden"
+  },
+  "opt_imported": {
+    "message": "Geladen: $NOTES$ Notizen und $POSTS$ deiner Beiträge. Beiträge anderer werden übersprungen.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

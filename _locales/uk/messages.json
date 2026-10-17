@@ -250,5 +250,19 @@
   },
   "popup_settings": {
     "message": "AI-відповіді"
+  },
+  "opt_import": {
+    "message": "Завантажити папку з голосом"
+  },
+  "opt_imported": {
+    "message": "Завантажено нотаток: $NOTES$, ваших постів: $POSTS$. Чужі пости пропущено.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

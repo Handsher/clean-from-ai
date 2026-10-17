@@ -4,13 +4,16 @@
 // Auth: ANTHROPIC_API_KEY, or the `ant auth login` profile (OAuth) when no key is set.
 import Anthropic from '@anthropic-ai/sdk';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 import { buildRequest, replyText } from '../reply-prompt.js';
+import { buildVoice } from '../voice-import.js';
 
 const [postsFile, voiceFile, voiceCheck] = process.argv.slice(2);
 const posts = JSON.parse(readFileSync(postsFile, 'utf8'));
-const voice = voiceFile ? readFileSync(voiceFile, 'utf8') : '';
+// a folder goes through the same importer as the "Load voice folder" button in settings
+const readTree = dir => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? readTree(join(dir, e.name)) : [{ name: e.name, text: readFileSync(join(dir, e.name), 'utf8') }]);
+const voice = !voiceFile ? '' : statSync(voiceFile).isDirectory() ? buildVoice(readTree(voiceFile).filter(f => /\.(md|txt|jsonl)$/i.test(f.name))).text : readFileSync(voiceFile, 'utf8');
 
 const oauth = !process.env.ANTHROPIC_API_KEY;
 const client = oauth

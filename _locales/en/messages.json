@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "AI replies"
+  },
+  "opt_import": {
+    "message": "Load voice folder"
+  },
+  "opt_imported": {
+    "message": "Loaded $NOTES$ notes and $POSTS$ of your posts. Other people's posts are skipped.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

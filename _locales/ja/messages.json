@@ -178,5 +178,19 @@
   },
   "popup_settings": {
     "message": "AI返信"
+  },
+  "opt_import": {
+    "message": "口調フォルダを読み込む"
+  },
+  "opt_imported": {
+    "message": "メモ $NOTES$ 件とあなたの投稿 $POSTS$ 件を読み込みました。他の人の投稿は除外されます。",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "Risposte IA"
+  },
+  "opt_import": {
+    "message": "Carica cartella dello stile"
+  },
+  "opt_imported": {
+    "message": "Caricate $NOTES$ note e $POSTS$ tuoi post. I post degli altri vengono saltati.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

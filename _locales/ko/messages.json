@@ -178,5 +178,19 @@
   },
   "popup_settings": {
     "message": "AI 답글"
+  },
+  "opt_import": {
+    "message": "말투 폴더 불러오기"
+  },
+  "opt_imported": {
+    "message": "메모 $NOTES$개와 내 게시물 $POSTS$개를 불러왔습니다. 다른 사람의 게시물은 제외됩니다.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

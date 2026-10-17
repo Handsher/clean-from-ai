@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "Respuestas con IA"
+  },
+  "opt_import": {
+    "message": "Cargar carpeta de estilo"
+  },
+  "opt_imported": {
+    "message": "Cargadas $NOTES$ notas y $POSTS$ de tus publicaciones. Se omiten las de otras personas.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

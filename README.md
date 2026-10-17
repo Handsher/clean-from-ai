@@ -27,6 +27,7 @@ Cleaning is fully offline. The only network call is the AI reply you click, stra
 | `test.cjs` | `node test.cjs` — checks the rules on emoji, flags, Ukrainian, watermarks. |
 | `background.js`, `reply-prompt.js` | The AI reply: the Claude request (prompt, images, frames) and the API call. |
 | `options.html/js/css` | Settings: API key, your voice, AI replies on/off. |
+| `voice-import.js` | "Load voice folder": builds your voice from notes (.md/.txt) and your own posts (.jsonl) from the last 12 months; other people's posts are skipped. |
 | `vendor/anthropic.js` | Anthropic's official SDK, bundled (`npm ci && npm run build`). |
 | `tools/try-replies.mjs` | Try the reply prompt on real posts from the terminal. |
 | `docs/` | The privacy policy page (GitHub Pages). |

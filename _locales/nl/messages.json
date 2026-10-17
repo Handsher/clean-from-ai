@@ -202,5 +202,19 @@
   },
   "popup_settings": {
     "message": "AI-antwoorden"
+  },
+  "opt_import": {
+    "message": "Stijlmap laden"
+  },
+  "opt_imported": {
+    "message": "$NOTES$ notities en $POSTS$ van je eigen posts geladen. Posts van anderen worden overgeslagen.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

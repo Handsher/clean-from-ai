@@ -178,5 +178,19 @@
   },
   "popup_settings": {
     "message": "Yapay zeka yanıtları"
+  },
+  "opt_import": {
+    "message": "Üslup klasörünü yükle"
+  },
+  "opt_imported": {
+    "message": "$NOTES$ not ve $POSTS$ gönderiniz yüklendi. Başkalarının gönderileri atlandı.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }

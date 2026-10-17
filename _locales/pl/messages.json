@@ -250,5 +250,19 @@
   },
   "popup_settings": {
     "message": "Odpowiedzi AI"
+  },
+  "opt_import": {
+    "message": "Wczytaj folder ze stylem"
+  },
+  "opt_imported": {
+    "message": "Wczytano notatek: $NOTES$, Twoich postów: $POSTS$. Posty innych osób pominięto.",
+    "placeholders": {
+      "notes": {
+        "content": "$1"
+      },
+      "posts": {
+        "content": "$2"
+      }
+    }
   }
 }
