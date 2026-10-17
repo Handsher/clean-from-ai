@@ -70,7 +70,7 @@ $('folder').addEventListener('change', async e => {
   e.target.value = '';
   if (!voice.text) return status('voiceStatus', t('reply_error_EMPTY'), false);
   $('voice').value = voice.text;
-  await chrome.storage.local.set({ voice: voice.text });
+  await chrome.storage.local.set({ voice: voice.text, voiceProfile: voice.profile }); // profile: measured habits + reply kinds
   status('voiceStatus', t('opt_imported', [String(voice.notes), String(voice.posts)]), true);
 });
 

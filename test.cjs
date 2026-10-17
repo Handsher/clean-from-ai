@@ -54,3 +54,22 @@ import('./voice-import.js').then(({ buildVoice }) => {
   assert.ok(v.text.includes('- nice one)') && !/someone else|essay|yappers|print|43\.5K/.test(v.text));
   console.log('voice import ok');
 });
+
+// per-reply style: 3 different reply kinds, never one that needs the user's own media, habits at the measured rates
+import('./reply-prompt.js').then(({ pickStyle }) => {
+  const profile = {
+    replies: { n: 10, lengths: [10, 20, 40], rates: { smile: 0.1, emoji: 0.5 } },
+    moves: { hype: { n: 5, len: 40, examples: [] }, agree: { n: 3, len: 10, examples: [] }, question: { n: 2, len: 60, examples: [] }, self_share: { n: 50, examples: [] } },
+  };
+  let smiles = 0;
+  for (let i = 0; i < 2000; i++) {
+    const s = pickStyle(profile, 'reply');
+    assert.equal(new Set(s.moves.map(m => m.move)).size, 3);
+    assert.ok(!s.moves.some(m => m.move === 'self_share'));
+    smiles += s.use.smile;
+  }
+  assert.ok(smiles > 120 && smiles < 280, 'smile rate ~10%: ' + smiles);
+  assert.equal(pickStyle(null, 'reply'), null);
+  assert.equal(pickStyle({ replies: profile.replies }, 'post'), null); // no measured posts: no post style
+  console.log('style ok');
+});

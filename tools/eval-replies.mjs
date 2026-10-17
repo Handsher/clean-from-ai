@@ -12,8 +12,8 @@ import Anthropic from '@anthropic-ai/sdk';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildRequest, replyText } from '../reply-prompt.js';
-import { buildVoice } from '../voice-import.js';
+import { buildRequest, pickStyle, replyText } from '../reply-prompt.js';
+import { buildVoice, habits } from '../voice-import.js';
 
 const [dir, maxArg] = process.argv.slice(2);
 const MAX = Number(maxArg) || 20;
@@ -107,39 +107,52 @@ async function judge(item, candidates, refs) {
 }
 
 // --- run ---
+// Variants: D = the 3.5 extension (voice-first, pairs, X context); E = D + a per-reply style drawn at the user's rates.
+// Pass other prompt versions through opts.reply to compare against them.
+const VARIANTS = ['D', 'E'];
 const totals = {};
 const rows = [];
+const outputs = Object.fromEntries([...VARIANTS, 'real'].map(k => [k, []]));
 for (const [n, item] of items.entries()) {
   const id = item.post_url.match(/\/status\/(\d+)/)[1];
   // hide the held-out reply everywhere the model could see it
   const selfRows = self.filter(r => r.id !== item.id).map(r => JSON.stringify(r)).join('\n');
   const pairRows = pairs.filter(r => r.id !== item.id).map(r => JSON.stringify(r)).join('\n');
-  const voiceA = buildVoice([{ name: 'VOICE.md', text: notes }, { name: 'self.jsonl', text: selfRows }]).text;
-  const voiceB = buildVoice([{ name: 'VOICE.md', text: notes }, { name: 'self.jsonl', text: selfRows }, { name: 'reply_pairs.jsonl', text: pairRows }]).text;
+  const voice = buildVoice([{ name: 'VOICE.md', text: notes }, { name: 'self.jsonl', text: selfRows }, { name: 'reply_pairs.jsonl', text: pairRows }]);
   const post = { author: item.post_author, text: item.post, images: (item.post_media || []).map(u => u + '?name=small') };
-  const [A, B, C, D] = await Promise.all([
-    generate({ kind: 'reply', post }, voiceA),
-    generate({ kind: 'reply', post }, voiceB),
-    generate({ kind: 'reply', post, context: cache[id] }, voiceB),
-    generate({ kind: 'reply', post, context: cache[id] }, voiceB, { reply: VOICE_FIRST }),
+  const [D, E] = await Promise.all([
+    generate({ kind: 'reply', post, context: cache[id] }, voice.text),
+    generate({ kind: 'reply', post, context: cache[id], style: pickStyle(voice.profile) }, voice.text),
   ]);
   const real = strip(item.reply);
+  const texts = { D, E, real };
+  for (const k in texts) outputs[k].push(texts[k]);
   const refs = pairs.filter(r => r.id !== item.id && r.created.includes('Oct')).slice(-15);
-  const { scores, guessed } = await judge(item, [{ name: 'A', text: A }, { name: 'B', text: B }, { name: 'C', text: C }, { name: 'D', text: D }, { name: 'real', text: real }], refs);
+  const { scores, guessed } = await judge(item, Object.entries(texts).map(([name, text]) => ({ name, text })), refs);
   for (const [k, s] of Object.entries(scores)) {
     totals[k] ??= { voice: 0, understanding: 0, value: 0, n: 0, guessedAsReal: 0 };
     totals[k].voice += s.voice; totals[k].understanding += s.understanding; totals[k].value += s.value; totals[k].n++;
   }
   if (guessed) totals[guessed].guessedAsReal++;
-  rows.push({ post: item.post.slice(0, 120), real, A, B, C, D, scores, guessed });
+  rows.push({ post: item.post.slice(0, 120), ...texts, scores, guessed });
   console.log(`\n[${n + 1}/${items.length}] @${item.post_author}: ${item.post.slice(0, 100).replace(/\n+/g, ' / ')}`);
-  for (const [k, t] of [['real', real], ['A', A], ['B', B], ['C', C], ['D', D]]) {
-    const s = scores[k];
-    console.log(`  ${k.padEnd(4)} v${s.voice} u${s.understanding} val${s.value}${guessed === k ? '  <- judge: real' : ''}  ${t.replace(/\n+/g, ' / ')}`);
+  for (const [k, t] of Object.entries(texts)) {
+    const sc = scores[k];
+    console.log(`  ${k.padEnd(4)} v${sc.voice} u${sc.understanding} val${sc.value}${guessed === k ? '  <- judge: real' : ''}  ${t.replace(/\n+/g, ' / ')}`);
   }
 }
-console.log('\n=== averages (1-10) over', items.length, 'held-out replies ===');
+console.log('\n=== judge, averages (1-10) over', items.length, 'held-out replies ===');
 for (const [k, t] of Object.entries(totals)) {
   console.log(`${k.padEnd(4)} voice ${(t.voice / t.n).toFixed(1)}  understanding ${(t.understanding / t.n).toFixed(1)}  value ${(t.value / t.n).toFixed(1)}  judged as the real one: ${t.guessedAsReal}/${t.n}`);
+}
+// Variety: how often each habit shows up, the median length, and how many replies open with the same word.
+console.log('\n=== variety (share of replies) ===');
+const pct = (arr, f) => `${Math.round(100 * arr.filter(f).length / arr.length)}%`.padStart(4);
+for (const [k, arr] of Object.entries(outputs)) {
+  const h = arr.map(habits);
+  const firsts = arr.map(t => t.trim().split(/\s+/)[0].toLowerCase().replace(/[^\p{L}]/gu, ''));
+  const top = Object.entries(firsts.reduce((c, w) => ((c[w] = (c[w] || 0) + 1), c), {})).sort((a, b) => b[1] - a[1])[0];
+  const len = arr.map(t => t.length).sort((a, b) => a - b);
+  console.log(`${k.padEnd(4)} ")" ${pct(h, x => x.smile)}  emoji ${pct(h, x => x.emoji)}  "!" ${pct(h, x => x.exclaim)}  2 lines ${pct(h, x => x.lines)}  slang ${pct(h, x => x.slang)}  median ${len[len.length >> 1]}c  most common opener "${top?.[0]}" ${top?.[1]}/${arr.length}`);
 }
 writeFileSync(join(dir, 'corpus', 'eval_results.json'), JSON.stringify({ totals, rows }, null, 1));

@@ -7,6 +7,7 @@ Browser extension that strips hidden AI watermark characters and AI-style typogr
 - **Live counter** — a badge on the eraser button shows how many AI tells are in your draft.
 - **Popup** — paste any text, clean it, copy it. Switch any rule group off.
 - **Reply with AI** — a ✦ button under every post on X. Claude Opus 5.5 reads the post, its images and 8 timestamped frames from its video, writes a reply in your voice, the cleaner cleans it, and it lands in X's reply box. You post it yourself. Needs your own Anthropic API key (about 1 cent per reply).
+- **Varied like you** — "Load voice folder" measures how you really reply (how often you use ")", emoji, "!", two lines; which kinds of replies: congrats, questions, short picks...). Each reply draws its kind, length and habits at your own rates, so they don't all come out the same.
 - **Knows the conversation** — with an optional twitterapi.io key, a reply also sees the author's bio, the post above in the thread and the most liked replies, and looks for an angle nobody took.
 - **Write with AI** — a ✦ next to the eraser in the post box. Type an idea in any language (or just attach media), click, and it becomes a post in your voice; every fact in your draft stays. Cmd+Z brings your draft back.
 - **15 languages** — English, Ukrainian, German, French, Spanish, Portuguese (BR), Italian, Polish, Dutch, Turkish, Japanese, Korean, Chinese (Simplified), Hindi, Indonesian. Add one by copying `_locales/en`.

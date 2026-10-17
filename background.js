@@ -2,7 +2,7 @@
 // under a post, "Write with AI" in the post box, or "Test key" in settings. It calls Claude with YOUR API key.
 
 import Anthropic from './vendor/anthropic.js';
-import { MODEL, buildRequest, replyText } from './reply-prompt.js';
+import { MODEL, buildRequest, pickStyle, replyText } from './reply-prompt.js';
 
 chrome.runtime.onMessage.addListener((msg, sender, send) => {
   if (sender.id !== chrome.runtime.id) return; // only our own content script and pages
@@ -33,8 +33,9 @@ async function client() {
 }
 
 async function generate(input) {
-  const { voice, xKey } = await chrome.storage.local.get({ voice: '', xKey: '' });
+  const { voice, xKey, voiceProfile } = await chrome.storage.local.get({ voice: '', xKey: '', voiceProfile: null });
   const anthropic = await client();
+  input = { ...input, style: pickStyle(voiceProfile, input.kind) }; // vary kind, length and habits at the user's own rates
   if (input.kind === 'reply' && xKey && /^\d+$/.test(input.post?.id || '')) input = { ...input, context: await xContext(input.post.id, xKey) };
   const res = await anthropic.beta.messages.create(buildRequest(input, voice));
   return { text: replyText(res), usage: { input: res.usage.input_tokens, output: res.usage.output_tokens } };
