@@ -25,6 +25,7 @@ for (const p of posts) {
   const post = { ...p, frames: (p.frameFiles || []).map(f => readFileSync(resolve(dirname(postsFile), f)).toString('base64')) };
   const req = buildRequest(post, voice);
   if (oauth) req.betas = [...req.betas, 'oauth-2025-04-20'];
+  if (process.env.EFFORT) req.output_config = { ...req.output_config, effort: process.env.EFFORT }; // compare effort levels
   const t0 = Date.now();
   const res = await client.beta.messages.create(req);
   const text = replyText(res);
