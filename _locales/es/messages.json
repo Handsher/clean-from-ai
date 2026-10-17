@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "privacidad"
+  },
+  "reply_button": {
+    "message": "Responder con IA"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Añade tu clave API de Anthropic en los ajustes de Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Tu clave API fue rechazada. Revísala en los ajustes"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Límite de solicitudes alcanzado. Inténtalo en un minuto"
+  },
+  "reply_error_NETWORK": {
+    "message": "No se puede conectar con Anthropic. Revisa tu conexión"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude se negó a responder a esta publicación"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "No se pudo abrir el cuadro de respuesta. Inténtalo de nuevo"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude devolvió una respuesta vacía. Inténtalo de nuevo"
+  },
+  "reply_error_API": {
+    "message": "Algo salió mal. Inténtalo de nuevo"
+  },
+  "opt_title": {
+    "message": "Respuestas con IA"
+  },
+  "opt_toggle": {
+    "message": "Botón «Responder con IA» en las publicaciones"
+  },
+  "opt_toggle_hint": {
+    "message": "Púlsalo bajo cualquier publicación en X: Claude escribe una respuesta con tu estilo, la limpia y la pone en el cuadro de respuesta. Publicas tú."
+  },
+  "opt_key": {
+    "message": "Clave API de Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Se guarda solo en este navegador. Crea una en console.anthropic.com. Una respuesta cuesta alrededor de un centavo."
+  },
+  "opt_save": {
+    "message": "Guardar"
+  },
+  "opt_test": {
+    "message": "Probar clave"
+  },
+  "opt_remove": {
+    "message": "Quitar"
+  },
+  "opt_key_ok": {
+    "message": "La clave funciona"
+  },
+  "opt_saved": {
+    "message": "Guardado"
+  },
+  "opt_key_removed": {
+    "message": "Clave eliminada"
+  },
+  "opt_voice": {
+    "message": "Tu estilo"
+  },
+  "opt_voice_hint": {
+    "message": "Cómo escribes: tono, jerga, emojis, longitud. Pega algunas de tus respuestas reales y Claude copia el estilo."
+  },
+  "opt_privacy": {
+    "message": "Al pulsar el botón, el texto, el autor, las imágenes y hasta 4 fotogramas del vídeo de esa publicación se envían a Anthropic con tu clave. No se envía nada más."
+  },
+  "popup_settings": {
+    "message": "Respuestas con IA"
   }
 }

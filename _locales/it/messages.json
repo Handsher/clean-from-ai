@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "privacy"
+  },
+  "reply_button": {
+    "message": "Rispondi con l'IA"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Aggiungi la tua chiave API Anthropic nelle impostazioni di Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "La chiave API è stata rifiutata. Controllala nelle impostazioni"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Limite di richieste raggiunto. Riprova tra un minuto"
+  },
+  "reply_error_NETWORK": {
+    "message": "Impossibile raggiungere Anthropic. Controlla la connessione"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude ha rifiutato di rispondere a questo post"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Impossibile aprire il riquadro di risposta. Riprova"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude ha restituito una risposta vuota. Riprova"
+  },
+  "reply_error_API": {
+    "message": "Qualcosa è andato storto. Riprova"
+  },
+  "opt_title": {
+    "message": "Risposte IA"
+  },
+  "opt_toggle": {
+    "message": "Pulsante «Rispondi con l'IA» sotto i post"
+  },
+  "opt_toggle_hint": {
+    "message": "Cliccalo sotto qualsiasi post su X: Claude scrive una risposta con il tuo stile, la pulisce e la mette nel riquadro di risposta. Pubblichi tu."
+  },
+  "opt_key": {
+    "message": "Chiave API Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Salvata solo in questo browser. Creane una su console.anthropic.com. Una risposta costa circa un centesimo."
+  },
+  "opt_save": {
+    "message": "Salva"
+  },
+  "opt_test": {
+    "message": "Prova chiave"
+  },
+  "opt_remove": {
+    "message": "Rimuovi"
+  },
+  "opt_key_ok": {
+    "message": "La chiave funziona"
+  },
+  "opt_saved": {
+    "message": "Salvato"
+  },
+  "opt_key_removed": {
+    "message": "Chiave rimossa"
+  },
+  "opt_voice": {
+    "message": "Il tuo stile"
+  },
+  "opt_voice_hint": {
+    "message": "Come scrivi: tono, slang, emoji, lunghezza. Incolla qualche tua risposta reale, Claude ne copia lo stile."
+  },
+  "opt_privacy": {
+    "message": "Quando clicchi il pulsante, testo, autore, immagini e fino a 4 fotogrammi del video di quel post vengono inviati ad Anthropic con la tua chiave. Altrimenti non viene inviato nulla."
+  },
+  "popup_settings": {
+    "message": "Risposte IA"
   }
 }

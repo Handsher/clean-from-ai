@@ -178,5 +178,77 @@
   },
   "privacy": {
     "message": "приватність"
+  },
+  "reply_button": {
+    "message": "Відповісти з AI"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Додайте свій API-ключ Anthropic у налаштуваннях Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "API-ключ відхилено. Перевірте його в налаштуваннях"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Ліміт запитів вичерпано. Спробуйте за хвилину"
+  },
+  "reply_error_NETWORK": {
+    "message": "Немає з'єднання з Anthropic. Перевірте інтернет"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude відмовився відповідати на цей пост"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Не вдалося відкрити поле відповіді. Спробуйте ще раз"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude повернув порожню відповідь. Спробуйте ще раз"
+  },
+  "reply_error_API": {
+    "message": "Щось пішло не так. Спробуйте ще раз"
+  },
+  "opt_title": {
+    "message": "AI-відповіді"
+  },
+  "opt_toggle": {
+    "message": "Кнопка «Відповісти з AI» на постах"
+  },
+  "opt_toggle_hint": {
+    "message": "Натисніть її під будь-яким постом на X: Claude напише відповідь вашим голосом, очистить її і вставить у поле відповіді. Публікуєте ви самі."
+  },
+  "opt_key": {
+    "message": "API-ключ Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Зберігається лише в цьому браузері. Створіть ключ на console.anthropic.com. Одна відповідь коштує близько цента."
+  },
+  "opt_save": {
+    "message": "Зберегти"
+  },
+  "opt_test": {
+    "message": "Перевірити ключ"
+  },
+  "opt_remove": {
+    "message": "Видалити"
+  },
+  "opt_key_ok": {
+    "message": "Ключ працює"
+  },
+  "opt_saved": {
+    "message": "Збережено"
+  },
+  "opt_key_removed": {
+    "message": "Ключ видалено"
+  },
+  "opt_voice": {
+    "message": "Ваш голос"
+  },
+  "opt_voice_hint": {
+    "message": "Як ви пишете: тон, сленг, емодзі, довжина. Вставте кілька своїх справжніх відповідей, Claude перейме стиль."
+  },
+  "opt_privacy": {
+    "message": "Коли ви натискаєте кнопку, текст, автор, зображення і до 4 кадрів відео цього поста надсилаються в Anthropic з вашим ключем. Інакше нічого не надсилається."
+  },
+  "popup_settings": {
+    "message": "AI-відповіді"
   }
 }

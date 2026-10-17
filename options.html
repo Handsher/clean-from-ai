@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Clean from AI</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="28" height="28">
+    <div class="title">
+      <b>Clean from AI</b>
+      <span data-i18n="opt_title">AI replies</span>
+    </div>
+  </header>
+
+  <label class="row">
+    <span><b data-i18n="opt_toggle">Reply with AI button on posts</b><small data-i18n="opt_toggle_hint"></small></span>
+    <button id="replies" class="power" type="button" aria-pressed="true"><i></i><span></span></button>
+  </label>
+
+  <section>
+    <label class="label" for="key" data-i18n="opt_key">Anthropic API key</label>
+    <div class="field">
+      <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-ant-...">
+      <button id="save" type="button" class="primary" data-i18n="opt_save">Save</button>
+    </div>
+    <div class="actions">
+      <button id="test" type="button" class="link" data-i18n="opt_test">Test key</button>
+      <button id="remove" type="button" class="link" data-i18n="opt_remove">Remove</button>
+      <span id="keyStatus" class="found" role="status"></span>
+    </div>
+    <p class="hint" data-i18n="opt_key_hint"></p>
+  </section>
+
+  <section>
+    <label class="label" for="voice" data-i18n="opt_voice">Your voice</label>
+    <textarea id="voice" class="voice" rows="9" spellcheck="false"></textarea>
+    <div class="actions">
+      <button id="saveVoice" type="button" class="primary" data-i18n="opt_save">Save</button>
+      <span id="voiceStatus" class="found" role="status"></span>
+    </div>
+    <p class="hint" data-i18n="opt_voice_hint"></p>
+  </section>
+
+  <p class="privacy" data-i18n="opt_privacy"></p>
+
+  <script src="i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

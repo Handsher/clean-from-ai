@@ -29,16 +29,21 @@ async function cleanEditor(editor) {
   const text = readText(editor);
   const { text: cleaned, count } = analyze(text, settings.rules);
   if (!text.trim() || cleaned === text) return 0;
+  return (await pasteInto(editor, cleaned)) ? count : 0;
+}
+
+// Replace everything in a rich editor with `text`. False if the editor wouldn't take focus (a paste could land elsewhere).
+async function pasteInto(editor, text) {
   editor.focus();
-  if (!editor.contains(document.activeElement)) return 0; // editor refused focus: a paste now could land elsewhere
+  if (!editor.contains(document.activeElement)) return false;
   document.execCommand('selectAll');
   await new Promise(r => setTimeout(r, 50)); // let the editor pick up the new selection
   const data = new DataTransfer();
-  data.setData('text/plain', cleaned);
+  data.setData('text/plain', text);
   // ProseMirror turns plain-text blank lines into nothing, so give it one <p> per line. Draft.js gets plain text only.
-  if (!editor.querySelector('[data-block="true"]')) data.setData('text/html', cleaned.split('\n').map(l => `<p>${escapeHtml(l)}</p>`).join(''));
+  if (!editor.querySelector('[data-block="true"]')) data.setData('text/html', text.split('\n').map(l => `<p>${escapeHtml(l)}</p>`).join(''));
   editor.dispatchEvent(new ClipboardEvent('paste', { clipboardData: data, bubbles: true, cancelable: true }));
-  return count;
+  return true;
 }
 
 function makeButton(getEditors) {
@@ -115,6 +120,101 @@ document.addEventListener('focusout', () => setTimeout(() => {
 addEventListener('scroll', () => focused && placeFloater(), true);
 addEventListener('resize', () => focused && placeFloater());
 
+// --- Reply with AI: a button in each post's action row (reply / repost / like) ---
+// Nothing is read from a post until you click its button. Then its text, images and a few video frames go to
+// background.js, which asks Claude with your own API key; the reply is cleaned and put in X's reply box for you to post.
+const SPARK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5c.9 5.6 3.9 8.6 9.5 9.5-5.6.9-8.6 3.9-9.5 9.5-.9-5.6-3.9-8.6-9.5-9.5 5.6-.9 8.6-3.9 9.5-9.5z"/></svg>';
+let replies = { on: false }; // on = feature enabled in settings and an API key is saved
+
+function addReplyButton(article) {
+  const row = article.querySelector('[data-testid="reply"]')?.closest('[role="group"]');
+  if (!row || row.querySelector('.cleanai-reply')) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'cleanai-reply';
+  btn.innerHTML = SPARK;
+  btn.title = t('reply_button');
+  btn.setAttribute('aria-label', t('reply_button'));
+  btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); replyTo(article, btn); });
+  row.append(btn);
+}
+
+async function replyTo(article, btn) {
+  if (btn.classList.contains('cleanai-busy')) return;
+  btn.classList.add('cleanai-busy');
+  btn.classList.remove('cleanai-error');
+  try {
+    const post = await readPost(article);
+    const res = await chrome.runtime.sendMessage({ type: 'cleanai:reply', post });
+    if (!res?.ok) throw new Error(res?.error || 'API');
+    const text = clean(res.text, settings.rules); // the reply goes through the same cleaner as everything you post
+    if (!text.trim()) throw new Error('EMPTY');
+    article.querySelector('[data-testid="reply"]').click(); // X opens its own reply box; you review and press Reply
+    const editor = await waitFor(() => document.querySelector(`[role="dialog"] ${X_EDITOR}`) || document.activeElement?.closest?.(X_EDITOR), 4000);
+    if (!editor || !(await pasteInto(editor, text))) throw new Error('NO_EDITOR');
+  } catch (e) {
+    btn.classList.add('cleanai-error');
+    btn.title = t('reply_error_' + (e.message in ERRORS ? e.message : 'API'));
+  } finally {
+    btn.classList.remove('cleanai-busy');
+  }
+}
+const ERRORS = { NO_KEY: 1, BAD_KEY: 1, RATE_LIMIT: 1, NETWORK: 1, REFUSAL: 1, NO_EDITOR: 1, EMPTY: 1, API: 1 };
+
+async function waitFor(fn, ms) {
+  for (const end = Date.now() + ms; Date.now() < end; await new Promise(r => setTimeout(r, 100))) {
+    const v = fn();
+    if (v) return v;
+  }
+  return null;
+}
+
+// The clicked post only. Quoted posts sit inside the article as their own block with a second tweetText.
+async function readPost(article) {
+  const texts = [...article.querySelectorAll('[data-testid="tweetText"]')];
+  const author = (article.querySelector('[data-testid="User-Name"]')?.innerText.match(/@(\w{1,15})/) || [])[1];
+  const images = [...article.querySelectorAll('[data-testid="tweetPhoto"] img[src*="pbs.twimg.com/media/"]')]
+    .map(img => { const u = new URL(img.src); u.searchParams.set('name', 'small'); return u.href; });
+  const video = article.querySelector('video');
+  if (video?.poster?.startsWith('https://pbs.twimg.com/')) images.push(video.poster);
+  return {
+    author,
+    text: texts[0]?.innerText || '',
+    quoted: texts[1]?.innerText || '',
+    images: [...new Set(images)].slice(0, 4),
+    frames: video ? await videoFrames(video) : [],
+  };
+}
+
+// Up to 4 frames across the video, as JPEG base64. X streams video through MediaSource, so the canvas isn't tainted;
+// when it is (a plain cross-origin file), we stop and the poster image above is all Claude sees.
+async function videoFrames(video, count = 4) {
+  if (!(video.duration > 0) || !isFinite(video.duration) || !video.videoWidth) return [];
+  const scale = Math.min(1, 768 / video.videoWidth);
+  const canvas = Object.assign(document.createElement('canvas'), { width: Math.round(video.videoWidth * scale), height: Math.round(video.videoHeight * scale) });
+  const ctx = canvas.getContext('2d');
+  const was = { time: video.currentTime, paused: video.paused };
+  const frames = [];
+  video.pause();
+  try {
+    for (let i = 0; i < count; i++) {
+      await seek(video, video.duration * (i + 0.5) / count);
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      frames.push(canvas.toDataURL('image/jpeg', 0.7).split(',')[1]); // throws on a tainted canvas
+    }
+  } catch { /* keep the frames we got */ }
+  await seek(video, was.time);
+  if (!was.paused) video.play().catch(() => {});
+  return frames;
+}
+
+const seek = (video, time) => new Promise(resolve => {
+  const done = () => { clearTimeout(timer); video.removeEventListener('seeked', done); resolve(); };
+  const timer = setTimeout(done, 2000); // a part X hasn't loaded yet may never seek: move on
+  video.addEventListener('seeked', done);
+  video.currentTime = time;
+});
+
 function scan() {
   for (const bar of document.querySelectorAll('[data-testid="toolBar"]')) {
     const wrap = bar.querySelector('.cleanai-wrap');
@@ -122,6 +222,8 @@ function scan() {
     updateBadge(wrap || addXButton(bar)); // re-added if X re-renders the toolbar
   }
   if (focused) placeFloater(); // badge + position follow typing (the editor grows)
+  if (replies.on && settings.enabled) document.querySelectorAll('article[data-testid="tweet"]').forEach(addReplyButton);
+  else document.querySelectorAll('.cleanai-reply').forEach(b => b.remove());
 }
 
 let queued = false;
@@ -132,7 +234,11 @@ new MutationObserver(() => {
 }).observe(document.body, { childList: true, subtree: true, characterData: true }); // characterData = typing
 
 chrome.storage.sync.get({ enabled: true, rules: {} }).then(s => { settings = sanitizeSettings(s); scan(); });
+const readReplies = () => Promise.all([chrome.storage.sync.get({ replies: true }), chrome.storage.local.get({ hasKey: false })])
+  .then(([s, l]) => { replies = { on: s.replies !== false && l.hasKey === true }; scan(); });
+readReplies();
 chrome.storage.onChanged.addListener((changes, area) => {
+  if ('replies' in changes || 'hasKey' in changes) readReplies();
   if (area !== 'sync') return;
   const next = { ...settings };
   for (const key of ['enabled', 'rules']) if (key in changes) next[key] = changes[key].newValue;

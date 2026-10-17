@@ -1,0 +1,15 @@
+{
+  "name": "clean-from-ai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild build/anthropic-entry.js --bundle --format=esm --platform=browser --minify --outfile=vendor/anthropic.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.135.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "confidentialité"
+  },
+  "reply_button": {
+    "message": "Répondre avec l'IA"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Ajoutez votre clé API Anthropic dans les réglages de Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Votre clé API a été refusée. Vérifiez-la dans les réglages"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Limite de requêtes atteinte. Réessayez dans une minute"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic injoignable. Vérifiez votre connexion"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude a refusé de répondre à ce post"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Impossible d'ouvrir le champ de réponse. Réessayez"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude a renvoyé une réponse vide. Réessayez"
+  },
+  "reply_error_API": {
+    "message": "Une erreur est survenue. Réessayez"
+  },
+  "opt_title": {
+    "message": "Réponses IA"
+  },
+  "opt_toggle": {
+    "message": "Bouton « Répondre avec l'IA » sous les posts"
+  },
+  "opt_toggle_hint": {
+    "message": "Cliquez dessous un post sur X : Claude écrit une réponse avec votre style, la nettoie et la place dans le champ de réponse. C'est vous qui publiez."
+  },
+  "opt_key": {
+    "message": "Clé API Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Stockée uniquement dans ce navigateur. Créez-en une sur console.anthropic.com. Une réponse coûte environ un centime."
+  },
+  "opt_save": {
+    "message": "Enregistrer"
+  },
+  "opt_test": {
+    "message": "Tester la clé"
+  },
+  "opt_remove": {
+    "message": "Supprimer"
+  },
+  "opt_key_ok": {
+    "message": "La clé fonctionne"
+  },
+  "opt_saved": {
+    "message": "Enregistré"
+  },
+  "opt_key_removed": {
+    "message": "Clé supprimée"
+  },
+  "opt_voice": {
+    "message": "Votre style"
+  },
+  "opt_voice_hint": {
+    "message": "Comment vous écrivez : ton, argot, emoji, longueur. Collez quelques-unes de vos vraies réponses, Claude imite le style."
+  },
+  "opt_privacy": {
+    "message": "Quand vous cliquez sur le bouton, le texte, l'auteur, les images et jusqu'à 4 images de la vidéo de ce post sont envoyés à Anthropic avec votre clé. Rien d'autre n'est envoyé."
+  },
+  "popup_settings": {
+    "message": "Réponses IA"
   }
 }

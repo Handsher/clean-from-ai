@@ -38,22 +38,30 @@
   </header>
 
   <h1>Privacy Policy</h1>
-  <div class="date">Effective 14 October 2026 · v2.4.0</div>
+  <div class="date">Effective 17 October 2026 · v3.0.0</div>
 
-  <p>Clean from AI removes hidden AI watermark characters and AI-style typography (long dashes, curly quotes, fancy Unicode letters) from the posts you write on X and Typefully, and from any text you paste into the extension's popup.</p>
+  <p>Clean from AI removes hidden AI watermark characters and AI-style typography (long dashes, curly quotes, fancy Unicode letters) from the posts you write on X and Typefully, and from any text you paste into the extension's popup. Optionally, it can draft a reply to a post on X with Claude, using your own Anthropic API key.</p>
 
-  <div class="card"><b>No data leaves your browser</b>The extension has no network code at all. It never sends your text, your settings or anything else to a server. There is nothing to collect, so nothing is collected.</div>
-  <div class="card"><b>Nothing is stored except two settings and a number</b>Your browser's extension storage keeps which cleaning rules are on, whether the extension is paused, and a running count of characters it has cleaned. The text you clean is never saved.</div>
-  <div class="card"><b>It only reads what you are typing</b>On x.com and typefully.com the extension reads the contents of the post editor you have clicked into, so it can show how many AI tells are inside and clean them when you ask. It does not read other people's posts, password fields, direct-message history, cookies or your clipboard.</div>
+  <div class="card"><b>Cleaning never leaves your browser</b>Cleaning text runs entirely on your computer. The text you clean is never sent anywhere and never saved.</div>
+  <div class="card"><b>AI replies send one post to Anthropic, only when you click</b>The AI reply feature is off until you add your own Anthropic API key. When you click the Reply with AI button under a post, the extension sends that post's text, its author's handle, links to its images and up to 4 still frames from its video, together with the voice description you wrote in settings, to Anthropic's API using your key. Nothing is sent automatically, and nothing is sent to us: there is no server of ours in between. Anthropic processes the request under <a href="https://www.anthropic.com/legal/privacy">its own privacy policy</a> and your API agreement with it.</div>
+  <div class="card"><b>Your API key stays on this computer</b>The key is kept in the extension's local storage on this device (it is not synced to other devices), is sent only to api.anthropic.com, and is never shown back on any page. Remove it at any time in settings.</div>
+  <div class="card"><b>It only reads what you ask it to</b>On x.com and typefully.com the extension reads the post editor you have clicked into, to count and clean AI tells. It reads another person's post only at the moment you click Reply with AI under it. It does not read password fields, direct-message history, cookies or your clipboard.</div>
+
+  <h2>What is stored</h2>
+  <ul>
+    <li>Synced with your browser account: which cleaning rules are on, whether cleaning and AI replies are switched on.</li>
+    <li>On this device only: your API key, your voice description and a running count of cleaned characters.</li>
+  </ul>
 
   <h2>Permissions</h2>
   <ul>
-    <li><code>storage</code> — to remember your settings and the counter described above.</li>
-    <li>Access to <code>x.com</code>, <code>twitter.com</code> and <code>typefully.com</code> — to add the Clean AI button to the post editor on those sites only.</li>
+    <li><code>storage</code> — to keep the settings listed above.</li>
+    <li>Access to <code>x.com</code>, <code>twitter.com</code> and <code>typefully.com</code> — to add the Clean AI and Reply with AI buttons on those sites only.</li>
+    <li>Access to <code>api.anthropic.com</code> — to send a reply request when you click Reply with AI.</li>
   </ul>
 
   <h2>Third parties</h2>
-  <p>None. No analytics, no trackers, no fonts or scripts loaded from external servers, no dependencies. Everything the extension needs is inside the package you install.</p>
+  <p>Anthropic, only for AI replies and only with your key, as described above. No analytics, no trackers, no fonts or scripts loaded from external servers. The one library inside the extension, Anthropic's official SDK, is bundled into the package you install.</p>
 
   <h2>Open source</h2>
   <p>The complete source code is public, so every claim on this page can be checked: <a href="https://github.com/Handsher/clean-from-ai">github.com/Handsher/clean-from-ai</a>. A security review of the current version is in <a href="https://github.com/Handsher/clean-from-ai/blob/main/SECURITY-AUDIT.md">SECURITY-AUDIT.md</a>.</p>

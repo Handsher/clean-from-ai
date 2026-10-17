@@ -106,5 +106,77 @@
   },
   "privacy": {
     "message": "プライバシー"
+  },
+  "reply_button": {
+    "message": "AIで返信"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Clean from AI の設定で Anthropic API キーを追加してください"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "API キーが拒否されました。設定で確認してください"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "利用上限に達しました。1分後にもう一度お試しください"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic に接続できません。接続を確認してください"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude はこの投稿への返信を断りました"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "返信欄を開けませんでした。もう一度お試しください"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude の返信が空でした。もう一度お試しください"
+  },
+  "reply_error_API": {
+    "message": "問題が発生しました。もう一度お試しください"
+  },
+  "opt_title": {
+    "message": "AI返信"
+  },
+  "opt_toggle": {
+    "message": "投稿に「AIで返信」ボタンを表示"
+  },
+  "opt_toggle_hint": {
+    "message": "X の投稿の下で押すと、Claude があなたの口調で返信を書き、整えて返信欄に入れます。投稿はご自身で。"
+  },
+  "opt_key": {
+    "message": "Anthropic API キー"
+  },
+  "opt_key_hint": {
+    "message": "このブラウザにのみ保存されます。console.anthropic.com で作成できます。返信1件あたり約1セントです。"
+  },
+  "opt_save": {
+    "message": "保存"
+  },
+  "opt_test": {
+    "message": "キーをテスト"
+  },
+  "opt_remove": {
+    "message": "削除"
+  },
+  "opt_key_ok": {
+    "message": "キーは有効です"
+  },
+  "opt_saved": {
+    "message": "保存しました"
+  },
+  "opt_key_removed": {
+    "message": "キーを削除しました"
+  },
+  "opt_voice": {
+    "message": "あなたの口調"
+  },
+  "opt_voice_hint": {
+    "message": "書き方：トーン、スラング、絵文字、長さ。実際の返信をいくつか貼り付けると、Claude がその口調をまねます。"
+  },
+  "opt_privacy": {
+    "message": "ボタンを押すと、その投稿のテキスト、投稿者、画像、最大4枚の動画フレームがあなたのキーで Anthropic に送られます。それ以外は何も送信されません。"
+  },
+  "popup_settings": {
+    "message": "AI返信"
   }
 }

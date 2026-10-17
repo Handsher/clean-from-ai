@@ -55,3 +55,27 @@
 .cleanai-float .cleanai-btn:hover { background: rgb(26, 140, 216); }
 .cleanai-float .cleanai-btn svg { width: 18px; height: 18px; }
 .cleanai-float .cleanai-btn.cleanai-done { background: rgb(0, 186, 124); color: #fff; }
+
+/* Reply with AI: sits in each post's action row, sized like X's own icons */
+.cleanai-reply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgb(113, 118, 123);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cleanai-reply:hover { background: rgba(29, 155, 240, 0.1); color: rgb(29, 155, 240); }
+.cleanai-reply:focus-visible { outline: 2px solid rgb(29, 155, 240); outline-offset: 1px; }
+.cleanai-reply svg { width: 18px; height: 18px; }
+.cleanai-reply.cleanai-busy { color: rgb(29, 155, 240); cursor: progress; }
+.cleanai-reply.cleanai-busy svg { animation: cleanai-spin 1s linear infinite; }
+.cleanai-reply.cleanai-error { color: rgb(244, 33, 46); }
+@keyframes cleanai-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cleanai-reply.cleanai-busy svg { animation: none; opacity: 0.6; } }

@@ -91,3 +91,4 @@ chrome.storage.local.get({ total: 0 }).then(s => showTotal(s.total));
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'local' && changes.total) showTotal(changes.total.newValue);
 });
+$('settings').addEventListener('click', e => { e.preventDefault(); chrome.runtime.openOptionsPage(); });

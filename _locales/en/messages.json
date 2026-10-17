@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "privacy"
+  },
+  "reply_button": {
+    "message": "Reply with AI"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Add your Anthropic API key in Clean from AI settings"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Your API key was rejected. Check it in settings"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Rate limit reached. Try again in a minute"
+  },
+  "reply_error_NETWORK": {
+    "message": "Can't reach Anthropic. Check your connection"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude declined to reply to this post"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Couldn't open the reply box. Try again"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude returned an empty reply. Try again"
+  },
+  "reply_error_API": {
+    "message": "Something went wrong. Try again"
+  },
+  "opt_title": {
+    "message": "AI replies"
+  },
+  "opt_toggle": {
+    "message": "Reply with AI button on posts"
+  },
+  "opt_toggle_hint": {
+    "message": "Click it under any post on X: Claude writes a reply in your voice, cleans it and puts it in the reply box. You post it yourself."
+  },
+  "opt_key": {
+    "message": "Anthropic API key"
+  },
+  "opt_key_hint": {
+    "message": "Stored only in this browser. Create one at console.anthropic.com. A reply costs about one cent."
+  },
+  "opt_save": {
+    "message": "Save"
+  },
+  "opt_test": {
+    "message": "Test key"
+  },
+  "opt_remove": {
+    "message": "Remove"
+  },
+  "opt_key_ok": {
+    "message": "Key works"
+  },
+  "opt_saved": {
+    "message": "Saved"
+  },
+  "opt_key_removed": {
+    "message": "Key removed"
+  },
+  "opt_voice": {
+    "message": "Your voice"
+  },
+  "opt_voice_hint": {
+    "message": "How you write: tone, slang, emoji, length. Paste a few of your real replies, Claude copies the style."
+  },
+  "opt_privacy": {
+    "message": "When you click the button, that post's text, author, images and up to 4 video frames go to Anthropic with your key. Nothing is sent otherwise."
+  },
+  "popup_settings": {
+    "message": "AI replies"
   }
 }

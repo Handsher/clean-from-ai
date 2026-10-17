@@ -106,5 +106,77 @@
   },
   "privacy": {
     "message": "gizlilik"
+  },
+  "reply_button": {
+    "message": "Yapay zekayla yanıtla"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Anthropic API anahtarınızı Clean from AI ayarlarına ekleyin"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "API anahtarınız reddedildi. Ayarlardan kontrol edin"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "İstek sınırına ulaşıldı. Bir dakika sonra tekrar deneyin"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic'e ulaşılamıyor. Bağlantınızı kontrol edin"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude bu gönderiye yanıt vermeyi reddetti"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Yanıt kutusu açılamadı. Tekrar deneyin"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude boş bir yanıt döndürdü. Tekrar deneyin"
+  },
+  "reply_error_API": {
+    "message": "Bir şeyler ters gitti. Tekrar deneyin"
+  },
+  "opt_title": {
+    "message": "Yapay zeka yanıtları"
+  },
+  "opt_toggle": {
+    "message": "Gönderilerde \"Yapay zekayla yanıtla\" düğmesi"
+  },
+  "opt_toggle_hint": {
+    "message": "X'te herhangi bir gönderinin altında tıklayın: Claude sizin üslubunuzla bir yanıt yazar, temizler ve yanıt kutusuna koyar. Paylaşmayı siz yaparsınız."
+  },
+  "opt_key": {
+    "message": "Anthropic API anahtarı"
+  },
+  "opt_key_hint": {
+    "message": "Yalnızca bu tarayıcıda saklanır. console.anthropic.com adresinden oluşturun. Bir yanıt yaklaşık bir sent tutar."
+  },
+  "opt_save": {
+    "message": "Kaydet"
+  },
+  "opt_test": {
+    "message": "Anahtarı test et"
+  },
+  "opt_remove": {
+    "message": "Kaldır"
+  },
+  "opt_key_ok": {
+    "message": "Anahtar çalışıyor"
+  },
+  "opt_saved": {
+    "message": "Kaydedildi"
+  },
+  "opt_key_removed": {
+    "message": "Anahtar kaldırıldı"
+  },
+  "opt_voice": {
+    "message": "Üslubunuz"
+  },
+  "opt_voice_hint": {
+    "message": "Nasıl yazdığınız: ton, argo, emoji, uzunluk. Kendi gerçek yanıtlarınızdan birkaçını yapıştırın, Claude üslubu taklit eder."
+  },
+  "opt_privacy": {
+    "message": "Düğmeye tıkladığınızda o gönderinin metni, yazarı, görselleri ve en fazla 4 video karesi anahtarınızla Anthropic'e gönderilir. Bunun dışında hiçbir şey gönderilmez."
+  },
+  "popup_settings": {
+    "message": "Yapay zeka yanıtları"
   }
 }

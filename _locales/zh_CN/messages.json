@@ -106,5 +106,77 @@
   },
   "privacy": {
     "message": "隐私"
+  },
+  "reply_button": {
+    "message": "用 AI 回复"
+  },
+  "reply_error_NO_KEY": {
+    "message": "请在 Clean from AI 设置中添加你的 Anthropic API 密钥"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "API 密钥被拒绝，请在设置中检查"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "已达到请求上限，请一分钟后重试"
+  },
+  "reply_error_NETWORK": {
+    "message": "无法连接 Anthropic，请检查网络"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude 拒绝回复这条帖子"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "无法打开回复框，请重试"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude 返回了空回复，请重试"
+  },
+  "reply_error_API": {
+    "message": "出了点问题，请重试"
+  },
+  "opt_title": {
+    "message": "AI 回复"
+  },
+  "opt_toggle": {
+    "message": "在帖子下显示“用 AI 回复”按钮"
+  },
+  "opt_toggle_hint": {
+    "message": "在 X 上任意帖子下点击它：Claude 会用你的语气写一条回复，清理后放进回复框。由你自己发布。"
+  },
+  "opt_key": {
+    "message": "Anthropic API 密钥"
+  },
+  "opt_key_hint": {
+    "message": "只保存在此浏览器中。可在 console.anthropic.com 创建。每条回复约一美分。"
+  },
+  "opt_save": {
+    "message": "保存"
+  },
+  "opt_test": {
+    "message": "测试密钥"
+  },
+  "opt_remove": {
+    "message": "移除"
+  },
+  "opt_key_ok": {
+    "message": "密钥有效"
+  },
+  "opt_saved": {
+    "message": "已保存"
+  },
+  "opt_key_removed": {
+    "message": "密钥已移除"
+  },
+  "opt_voice": {
+    "message": "你的语气"
+  },
+  "opt_voice_hint": {
+    "message": "你的写法：语气、俚语、表情、长度。贴几条你真实的回复，Claude 会模仿这种风格。"
+  },
+  "opt_privacy": {
+    "message": "点击按钮时，该帖子的文字、作者、图片和最多 4 帧视频画面会用你的密钥发送给 Anthropic。其他情况下不会发送任何内容。"
+  },
+  "popup_settings": {
+    "message": "AI 回复"
   }
 }

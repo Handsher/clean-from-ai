@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "गोपनीयता"
+  },
+  "reply_button": {
+    "message": "AI से जवाब दें"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Clean from AI की सेटिंग में अपनी Anthropic API कुंजी जोड़ें"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "आपकी API कुंजी अस्वीकार हो गई। सेटिंग में जाँचें"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "अनुरोध सीमा पूरी हो गई। एक मिनट बाद फिर कोशिश करें"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic तक नहीं पहुँच पा रहे। अपना कनेक्शन जाँचें"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude ने इस पोस्ट का जवाब देने से मना कर दिया"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "जवाब बॉक्स नहीं खुल सका। फिर कोशिश करें"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude ने खाली जवाब दिया। फिर कोशिश करें"
+  },
+  "reply_error_API": {
+    "message": "कुछ गड़बड़ हो गई। फिर कोशिश करें"
+  },
+  "opt_title": {
+    "message": "AI जवाब"
+  },
+  "opt_toggle": {
+    "message": "पोस्ट पर \"AI से जवाब दें\" बटन"
+  },
+  "opt_toggle_hint": {
+    "message": "X पर किसी भी पोस्ट के नीचे क्लिक करें: Claude आपकी शैली में जवाब लिखता है, उसे साफ़ करता है और जवाब बॉक्स में डाल देता है। पोस्ट आप खुद करते हैं।"
+  },
+  "opt_key": {
+    "message": "Anthropic API कुंजी"
+  },
+  "opt_key_hint": {
+    "message": "सिर्फ़ इसी ब्राउज़र में सहेजी जाती है। console.anthropic.com पर बनाएँ। एक जवाब की लागत लगभग एक सेंट है।"
+  },
+  "opt_save": {
+    "message": "सहेजें"
+  },
+  "opt_test": {
+    "message": "कुंजी जाँचें"
+  },
+  "opt_remove": {
+    "message": "हटाएँ"
+  },
+  "opt_key_ok": {
+    "message": "कुंजी काम कर रही है"
+  },
+  "opt_saved": {
+    "message": "सहेजा गया"
+  },
+  "opt_key_removed": {
+    "message": "कुंजी हटा दी गई"
+  },
+  "opt_voice": {
+    "message": "आपकी शैली"
+  },
+  "opt_voice_hint": {
+    "message": "आप कैसे लिखते हैं: लहजा, स्लैंग, इमोजी, लंबाई। अपने कुछ असली जवाब चिपकाएँ, Claude वही शैली अपनाएगा।"
+  },
+  "opt_privacy": {
+    "message": "बटन क्लिक करने पर उस पोस्ट का टेक्स्ट, लेखक, तस्वीरें और वीडियो के अधिकतम 4 फ़्रेम आपकी कुंजी से Anthropic को भेजे जाते हैं। इसके अलावा कुछ नहीं भेजा जाता।"
+  },
+  "popup_settings": {
+    "message": "AI जवाब"
   }
 }

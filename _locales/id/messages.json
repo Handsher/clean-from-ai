@@ -106,5 +106,77 @@
   },
   "privacy": {
     "message": "privasi"
+  },
+  "reply_button": {
+    "message": "Balas dengan AI"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Tambahkan kunci API Anthropic Anda di pengaturan Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Kunci API Anda ditolak. Periksa di pengaturan"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Batas permintaan tercapai. Coba lagi dalam satu menit"
+  },
+  "reply_error_NETWORK": {
+    "message": "Tidak bisa menghubungi Anthropic. Periksa koneksi Anda"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude menolak membalas postingan ini"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Kotak balasan tidak bisa dibuka. Coba lagi"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude mengembalikan balasan kosong. Coba lagi"
+  },
+  "reply_error_API": {
+    "message": "Terjadi kesalahan. Coba lagi"
+  },
+  "opt_title": {
+    "message": "Balasan AI"
+  },
+  "opt_toggle": {
+    "message": "Tombol \"Balas dengan AI\" di postingan"
+  },
+  "opt_toggle_hint": {
+    "message": "Klik di bawah postingan mana pun di X: Claude menulis balasan dengan gaya Anda, membersihkannya, dan memasukkannya ke kotak balasan. Anda sendiri yang memposting."
+  },
+  "opt_key": {
+    "message": "Kunci API Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Hanya disimpan di browser ini. Buat di console.anthropic.com. Satu balasan sekitar satu sen."
+  },
+  "opt_save": {
+    "message": "Simpan"
+  },
+  "opt_test": {
+    "message": "Uji kunci"
+  },
+  "opt_remove": {
+    "message": "Hapus"
+  },
+  "opt_key_ok": {
+    "message": "Kunci berfungsi"
+  },
+  "opt_saved": {
+    "message": "Tersimpan"
+  },
+  "opt_key_removed": {
+    "message": "Kunci dihapus"
+  },
+  "opt_voice": {
+    "message": "Gaya Anda"
+  },
+  "opt_voice_hint": {
+    "message": "Cara Anda menulis: nada, slang, emoji, panjang. Tempel beberapa balasan asli Anda, Claude akan meniru gayanya."
+  },
+  "opt_privacy": {
+    "message": "Saat Anda mengklik tombol, teks, penulis, gambar, dan hingga 4 bingkai video dari postingan itu dikirim ke Anthropic dengan kunci Anda. Selain itu tidak ada yang dikirim."
+  },
+  "popup_settings": {
+    "message": "Balasan AI"
   }
 }

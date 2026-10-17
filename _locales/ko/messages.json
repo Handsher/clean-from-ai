@@ -106,5 +106,77 @@
   },
   "privacy": {
     "message": "개인정보"
+  },
+  "reply_button": {
+    "message": "AI로 답글"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Clean from AI 설정에서 Anthropic API 키를 추가하세요"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "API 키가 거부되었습니다. 설정에서 확인하세요"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "요청 한도에 도달했습니다. 1분 후 다시 시도하세요"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic에 연결할 수 없습니다. 연결을 확인하세요"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude가 이 게시물에 대한 답글을 거절했습니다"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "답글 창을 열 수 없습니다. 다시 시도하세요"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude가 빈 답글을 보냈습니다. 다시 시도하세요"
+  },
+  "reply_error_API": {
+    "message": "문제가 발생했습니다. 다시 시도하세요"
+  },
+  "opt_title": {
+    "message": "AI 답글"
+  },
+  "opt_toggle": {
+    "message": "게시물에 'AI로 답글' 버튼 표시"
+  },
+  "opt_toggle_hint": {
+    "message": "X의 게시물 아래에서 누르면 Claude가 당신의 말투로 답글을 쓰고 정리해 답글 창에 넣습니다. 게시는 직접 하세요."
+  },
+  "opt_key": {
+    "message": "Anthropic API 키"
+  },
+  "opt_key_hint": {
+    "message": "이 브라우저에만 저장됩니다. console.anthropic.com에서 만드세요. 답글 1개에 약 1센트입니다."
+  },
+  "opt_save": {
+    "message": "저장"
+  },
+  "opt_test": {
+    "message": "키 테스트"
+  },
+  "opt_remove": {
+    "message": "삭제"
+  },
+  "opt_key_ok": {
+    "message": "키가 작동합니다"
+  },
+  "opt_saved": {
+    "message": "저장됨"
+  },
+  "opt_key_removed": {
+    "message": "키가 삭제됨"
+  },
+  "opt_voice": {
+    "message": "나의 말투"
+  },
+  "opt_voice_hint": {
+    "message": "글쓰기 방식: 톤, 은어, 이모지, 길이. 실제 답글 몇 개를 붙여 넣으면 Claude가 말투를 따라 합니다."
+  },
+  "opt_privacy": {
+    "message": "버튼을 누르면 그 게시물의 텍스트, 작성자, 이미지, 최대 4장의 동영상 프레임이 당신의 키로 Anthropic에 전송됩니다. 그 외에는 아무것도 전송되지 않습니다."
+  },
+  "popup_settings": {
+    "message": "AI 답글"
   }
 }

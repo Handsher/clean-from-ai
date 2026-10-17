@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "privacidade"
+  },
+  "reply_button": {
+    "message": "Responder com IA"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Adicione sua chave de API da Anthropic nas configurações do Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Sua chave de API foi recusada. Confira nas configurações"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Limite de requisições atingido. Tente de novo em um minuto"
+  },
+  "reply_error_NETWORK": {
+    "message": "Não foi possível acessar a Anthropic. Verifique sua conexão"
+  },
+  "reply_error_REFUSAL": {
+    "message": "O Claude se recusou a responder a este post"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Não foi possível abrir a caixa de resposta. Tente de novo"
+  },
+  "reply_error_EMPTY": {
+    "message": "O Claude devolveu uma resposta vazia. Tente de novo"
+  },
+  "reply_error_API": {
+    "message": "Algo deu errado. Tente de novo"
+  },
+  "opt_title": {
+    "message": "Respostas com IA"
+  },
+  "opt_toggle": {
+    "message": "Botão \"Responder com IA\" nos posts"
+  },
+  "opt_toggle_hint": {
+    "message": "Clique nele em qualquer post no X: o Claude escreve uma resposta no seu estilo, limpa e coloca na caixa de resposta. Quem publica é você."
+  },
+  "opt_key": {
+    "message": "Chave de API da Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Fica salva só neste navegador. Crie uma em console.anthropic.com. Uma resposta custa cerca de um centavo de dólar."
+  },
+  "opt_save": {
+    "message": "Salvar"
+  },
+  "opt_test": {
+    "message": "Testar chave"
+  },
+  "opt_remove": {
+    "message": "Remover"
+  },
+  "opt_key_ok": {
+    "message": "A chave funciona"
+  },
+  "opt_saved": {
+    "message": "Salvo"
+  },
+  "opt_key_removed": {
+    "message": "Chave removida"
+  },
+  "opt_voice": {
+    "message": "Seu estilo"
+  },
+  "opt_voice_hint": {
+    "message": "Como você escreve: tom, gírias, emojis, tamanho. Cole algumas respostas reais suas e o Claude copia o estilo."
+  },
+  "opt_privacy": {
+    "message": "Quando você clica no botão, o texto, o autor, as imagens e até 4 quadros do vídeo daquele post vão para a Anthropic com a sua chave. Nada mais é enviado."
+  },
+  "popup_settings": {
+    "message": "Respostas com IA"
   }
 }

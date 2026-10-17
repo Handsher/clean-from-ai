@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "privacy"
+  },
+  "reply_button": {
+    "message": "Antwoorden met AI"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Voeg je Anthropic-API-sleutel toe in de instellingen van Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Je API-sleutel is geweigerd. Controleer hem in de instellingen"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Limiet bereikt. Probeer het over een minuut opnieuw"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic is niet bereikbaar. Controleer je verbinding"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude weigerde op deze post te reageren"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Kon het antwoordvak niet openen. Probeer het opnieuw"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude gaf een leeg antwoord. Probeer het opnieuw"
+  },
+  "reply_error_API": {
+    "message": "Er ging iets mis. Probeer het opnieuw"
+  },
+  "opt_title": {
+    "message": "AI-antwoorden"
+  },
+  "opt_toggle": {
+    "message": "Knop ‘Antwoorden met AI’ onder posts"
+  },
+  "opt_toggle_hint": {
+    "message": "Klik erop onder een post op X: Claude schrijft een antwoord in jouw stijl, schoont het op en zet het in het antwoordvak. Je plaatst het zelf."
+  },
+  "opt_key": {
+    "message": "Anthropic-API-sleutel"
+  },
+  "opt_key_hint": {
+    "message": "Alleen in deze browser opgeslagen. Maak er een op console.anthropic.com. Een antwoord kost ongeveer een cent."
+  },
+  "opt_save": {
+    "message": "Opslaan"
+  },
+  "opt_test": {
+    "message": "Sleutel testen"
+  },
+  "opt_remove": {
+    "message": "Verwijderen"
+  },
+  "opt_key_ok": {
+    "message": "Sleutel werkt"
+  },
+  "opt_saved": {
+    "message": "Opgeslagen"
+  },
+  "opt_key_removed": {
+    "message": "Sleutel verwijderd"
+  },
+  "opt_voice": {
+    "message": "Jouw stijl"
+  },
+  "opt_voice_hint": {
+    "message": "Hoe je schrijft: toon, slang, emoji, lengte. Plak een paar echte antwoorden van jezelf, Claude neemt de stijl over."
+  },
+  "opt_privacy": {
+    "message": "Als je op de knop klikt, gaan de tekst, auteur, afbeeldingen en tot 4 videobeelden van die post met jouw sleutel naar Anthropic. Verder wordt er niets verstuurd."
+  },
+  "popup_settings": {
+    "message": "AI-antwoorden"
   }
 }

@@ -130,5 +130,77 @@
   },
   "privacy": {
     "message": "Datenschutz"
+  },
+  "reply_button": {
+    "message": "Mit KI antworten"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Füge deinen Anthropic-API-Schlüssel in den Clean-from-AI-Einstellungen hinzu"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Dein API-Schlüssel wurde abgelehnt. Prüfe ihn in den Einstellungen"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Ratenlimit erreicht. Versuch es in einer Minute erneut"
+  },
+  "reply_error_NETWORK": {
+    "message": "Anthropic nicht erreichbar. Prüfe deine Verbindung"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude hat eine Antwort auf diesen Beitrag abgelehnt"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Antwortfeld konnte nicht geöffnet werden. Versuch es erneut"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude hat eine leere Antwort geliefert. Versuch es erneut"
+  },
+  "reply_error_API": {
+    "message": "Etwas ist schiefgelaufen. Versuch es erneut"
+  },
+  "opt_title": {
+    "message": "KI-Antworten"
+  },
+  "opt_toggle": {
+    "message": "„Mit KI antworten“-Button unter Beiträgen"
+  },
+  "opt_toggle_hint": {
+    "message": "Klick ihn unter einem Beitrag auf X: Claude schreibt eine Antwort in deinem Stil, bereinigt sie und setzt sie ins Antwortfeld. Posten tust du selbst."
+  },
+  "opt_key": {
+    "message": "Anthropic-API-Schlüssel"
+  },
+  "opt_key_hint": {
+    "message": "Wird nur in diesem Browser gespeichert. Erstelle einen auf console.anthropic.com. Eine Antwort kostet etwa einen Cent."
+  },
+  "opt_save": {
+    "message": "Speichern"
+  },
+  "opt_test": {
+    "message": "Schlüssel testen"
+  },
+  "opt_remove": {
+    "message": "Entfernen"
+  },
+  "opt_key_ok": {
+    "message": "Schlüssel funktioniert"
+  },
+  "opt_saved": {
+    "message": "Gespeichert"
+  },
+  "opt_key_removed": {
+    "message": "Schlüssel entfernt"
+  },
+  "opt_voice": {
+    "message": "Dein Stil"
+  },
+  "opt_voice_hint": {
+    "message": "Wie du schreibst: Ton, Slang, Emoji, Länge. Füge ein paar echte Antworten von dir ein, Claude übernimmt den Stil."
+  },
+  "opt_privacy": {
+    "message": "Wenn du den Button klickst, gehen Text, Autor, Bilder und bis zu 4 Videoframes dieses Beitrags mit deinem Schlüssel an Anthropic. Sonst wird nichts gesendet."
+  },
+  "popup_settings": {
+    "message": "KI-Antworten"
   }
 }

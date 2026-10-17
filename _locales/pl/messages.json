@@ -178,5 +178,77 @@
   },
   "privacy": {
     "message": "prywatność"
+  },
+  "reply_button": {
+    "message": "Odpowiedz z AI"
+  },
+  "reply_error_NO_KEY": {
+    "message": "Dodaj swój klucz API Anthropic w ustawieniach Clean from AI"
+  },
+  "reply_error_BAD_KEY": {
+    "message": "Klucz API został odrzucony. Sprawdź go w ustawieniach"
+  },
+  "reply_error_RATE_LIMIT": {
+    "message": "Osiągnięto limit zapytań. Spróbuj za minutę"
+  },
+  "reply_error_NETWORK": {
+    "message": "Brak połączenia z Anthropic. Sprawdź internet"
+  },
+  "reply_error_REFUSAL": {
+    "message": "Claude odmówił odpowiedzi na ten post"
+  },
+  "reply_error_NO_EDITOR": {
+    "message": "Nie udało się otworzyć pola odpowiedzi. Spróbuj ponownie"
+  },
+  "reply_error_EMPTY": {
+    "message": "Claude zwrócił pustą odpowiedź. Spróbuj ponownie"
+  },
+  "reply_error_API": {
+    "message": "Coś poszło nie tak. Spróbuj ponownie"
+  },
+  "opt_title": {
+    "message": "Odpowiedzi AI"
+  },
+  "opt_toggle": {
+    "message": "Przycisk „Odpowiedz z AI” pod postami"
+  },
+  "opt_toggle_hint": {
+    "message": "Kliknij go pod dowolnym postem na X: Claude napisze odpowiedź Twoim stylem, wyczyści ją i wstawi w pole odpowiedzi. Publikujesz sam."
+  },
+  "opt_key": {
+    "message": "Klucz API Anthropic"
+  },
+  "opt_key_hint": {
+    "message": "Przechowywany tylko w tej przeglądarce. Utwórz go na console.anthropic.com. Jedna odpowiedź kosztuje około centa."
+  },
+  "opt_save": {
+    "message": "Zapisz"
+  },
+  "opt_test": {
+    "message": "Sprawdź klucz"
+  },
+  "opt_remove": {
+    "message": "Usuń"
+  },
+  "opt_key_ok": {
+    "message": "Klucz działa"
+  },
+  "opt_saved": {
+    "message": "Zapisano"
+  },
+  "opt_key_removed": {
+    "message": "Klucz usunięty"
+  },
+  "opt_voice": {
+    "message": "Twój styl"
+  },
+  "opt_voice_hint": {
+    "message": "Jak piszesz: ton, slang, emoji, długość. Wklej kilka swoich prawdziwych odpowiedzi, Claude przejmie styl."
+  },
+  "opt_privacy": {
+    "message": "Gdy klikniesz przycisk, tekst, autor, obrazy i do 4 klatek wideo tego posta trafiają do Anthropic z Twoim kluczem. Poza tym nic nie jest wysyłane."
+  },
+  "popup_settings": {
+    "message": "Odpowiedzi AI"
   }
 }
