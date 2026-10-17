@@ -198,7 +198,7 @@
     "message": "How you write: tone, slang, emoji, length. Paste a few of your real replies, Claude copies the style."
   },
   "opt_privacy": {
-    "message": "When you click the button, that post's text, author, images and up to 4 video frames go to Anthropic with your key. Nothing is sent otherwise."
+    "message": "When you click the button, that post's text, author, images and up to 8 video frames go to Anthropic with your key. Nothing is sent otherwise."
   },
   "popup_settings": {
     "message": "AI replies"
@@ -216,5 +216,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Write with AI"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Write an idea or attach media first: Claude turns it into a post"
   }
 }

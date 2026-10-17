@@ -79,3 +79,10 @@
 .cleanai-reply.cleanai-error { color: rgb(244, 33, 46); }
 @keyframes cleanai-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .cleanai-reply.cleanai-busy svg { animation: none; opacity: 0.6; } }
+
+/* Write with AI: next to the eraser in the post box */
+.cleanai-write .cleanai-btn svg { width: 18px; height: 18px; }
+.cleanai-write .cleanai-btn.cleanai-busy { cursor: progress; }
+.cleanai-write .cleanai-btn.cleanai-busy svg { animation: cleanai-spin 1s linear infinite; }
+.cleanai-write .cleanai-btn.cleanai-error { color: rgb(244, 33, 46); }
+@media (prefers-reduced-motion: reduce) { .cleanai-write .cleanai-btn.cleanai-busy svg { animation: none; opacity: 0.6; } }

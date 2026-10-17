@@ -198,7 +198,7 @@
     "message": "Cómo escribes: tono, jerga, emojis, longitud. Pega algunas de tus respuestas reales y Claude copia el estilo."
   },
   "opt_privacy": {
-    "message": "Al pulsar el botón, el texto, el autor, las imágenes y hasta 4 fotogramas del vídeo de esa publicación se envían a Anthropic con tu clave. No se envía nada más."
+    "message": "Al pulsar el botón, el texto, el autor, las imágenes y hasta 8 fotogramas del vídeo de esa publicación se envían a Anthropic con tu clave. No se envía nada más."
   },
   "popup_settings": {
     "message": "Respuestas con IA"
@@ -216,5 +216,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Escribir con IA"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Escribe primero una idea o adjunta un archivo: Claude lo convierte en una publicación"
   }
 }

@@ -246,7 +246,7 @@
     "message": "Jak piszesz: ton, slang, emoji, długość. Wklej kilka swoich prawdziwych odpowiedzi, Claude przejmie styl."
   },
   "opt_privacy": {
-    "message": "Gdy klikniesz przycisk, tekst, autor, obrazy i do 4 klatek wideo tego posta trafiają do Anthropic z Twoim kluczem. Poza tym nic nie jest wysyłane."
+    "message": "Gdy klikniesz przycisk, tekst, autor, obrazy i do 8 klatek wideo tego posta trafiają do Anthropic z Twoim kluczem. Poza tym nic nie jest wysyłane."
   },
   "popup_settings": {
     "message": "Odpowiedzi AI"
@@ -264,5 +264,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Napisz z AI"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Najpierw wpisz pomysł lub dodaj multimedia: Claude zrobi z tego post"
   }
 }

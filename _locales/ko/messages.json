@@ -192,5 +192,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "AI로 쓰기"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "먼저 아이디어를 쓰거나 미디어를 첨부하세요. Claude가 게시물로 만들어 줍니다"
   }
 }

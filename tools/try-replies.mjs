@@ -22,8 +22,14 @@ const client = oauth
 
 let cost = 0;
 for (const p of posts) {
-  const post = { ...p, frames: (p.frameFiles || []).map(f => readFileSync(resolve(dirname(postsFile), f)).toString('base64')) };
-  const req = buildRequest(post, voice);
+  const b64 = f => readFileSync(resolve(dirname(postsFile), f)).toString('base64');
+  const frames = (p.frameFiles || []).map(f => (typeof f === 'string' ? b64(f) : { data: b64(f.file), t: f.t }));
+  const images = (p.images || []).map(src => (src.startsWith('https://') ? src : b64(src)));
+  const post = { ...p, images, frames };
+  const input = p.kind === 'post'
+    ? { kind: 'post', draft: p.draft || '', media: { images, frames, duration: p.duration } }
+    : { kind: 'reply', post, draft: p.draft };
+  const req = buildRequest(input, voice);
   if (oauth) req.betas = [...req.betas, 'oauth-2025-04-20'];
   if (process.env.EFFORT) req.output_config = { ...req.output_config, effort: process.env.EFFORT }; // compare effort levels
   const t0 = Date.now();
@@ -34,10 +40,10 @@ for (const p of posts) {
   cost += dollars;
   let check = '';
   if (voiceCheck) {
-    try { check = execFileSync('python3', [voiceCheck, 'reply', text]).toString().split('\n')[0]; }
+    try { check = execFileSync('python3', [voiceCheck, p.kind === 'post' ? 'post' : 'reply', text]).toString().split('\n')[0]; }
     catch (e) { check = e.stdout.toString().trim().replace(/\n/g, ' '); }
   }
-  console.log(`\n@${p.author} [${post.images?.length || 0} img, ${post.frames.length} frames]: ${p.text.slice(0, 90).replace(/\n/g, ' ')}`);
+  console.log(`\n${p.kind === 'post' ? 'POST draft' : '@' + p.author} [${images.length} img, ${frames.length} frames]: ${(p.text || p.draft || '').slice(0, 90).replace(/\n/g, ' ')}`);
   console.log(`  -> ${text}`);
   console.log(`     ${check}  ·  ${((Date.now() - t0) / 1000).toFixed(1)}s  ·  $${dollars.toFixed(4)}  ·  in ${u.input_tokens} out ${u.output_tokens}`);
 }

@@ -1,12 +1,12 @@
 // Service worker: the only part of the extension that uses the network, and only when you click "Reply with AI"
-// on a post or "Test key" in settings. It sends the post to Claude with YOUR API key and returns one reply.
+// under a post, "Write with AI" in the post box, or "Test key" in settings. It calls Claude with YOUR API key.
 
 import Anthropic from './vendor/anthropic.js';
 import { MODEL, buildRequest, replyText } from './reply-prompt.js';
 
 chrome.runtime.onMessage.addListener((msg, sender, send) => {
   if (sender.id !== chrome.runtime.id) return; // only our own content script and pages
-  if (msg?.type === 'cleanai:reply') run(() => reply(msg.post), send);
+  if (msg?.type === 'cleanai:generate') run(() => generate(msg.input), send);
   else if (msg?.type === 'cleanai:test') run(test, send);
   else return;
   return true; // answer asynchronously
@@ -32,9 +32,9 @@ async function client() {
   return new Anthropic({ apiKey, dangerouslyAllowBrowser: true, maxRetries: 1 });
 }
 
-async function reply(post) {
+async function generate(input) {
   const { voice } = await chrome.storage.local.get({ voice: '' });
-  const res = await (await client()).beta.messages.create(buildRequest(post, voice));
+  const res = await (await client()).beta.messages.create(buildRequest(input, voice));
   return { text: replyText(res), usage: { input: res.usage.input_tokens, output: res.usage.output_tokens } };
 }
 

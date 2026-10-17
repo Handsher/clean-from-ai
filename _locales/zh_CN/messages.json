@@ -174,7 +174,7 @@
     "message": "你的写法：语气、俚语、表情、长度。贴几条你真实的回复，Claude 会模仿这种风格。"
   },
   "opt_privacy": {
-    "message": "点击按钮时，该帖子的文字、作者、图片和最多 4 帧视频画面会用你的密钥发送给 Anthropic。其他情况下不会发送任何内容。"
+    "message": "点击按钮时，该帖子的文字、作者、图片和最多 8 帧视频画面会用你的密钥发送给 Anthropic。其他情况下不会发送任何内容。"
   },
   "popup_settings": {
     "message": "AI 回复"
@@ -192,5 +192,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "用 AI 写"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "请先写下想法或添加媒体，Claude 会把它变成一条帖子"
   }
 }

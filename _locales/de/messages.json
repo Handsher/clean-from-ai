@@ -198,7 +198,7 @@
     "message": "Wie du schreibst: Ton, Slang, Emoji, Länge. Füge ein paar echte Antworten von dir ein, Claude übernimmt den Stil."
   },
   "opt_privacy": {
-    "message": "Wenn du den Button klickst, gehen Text, Autor, Bilder und bis zu 4 Videoframes dieses Beitrags mit deinem Schlüssel an Anthropic. Sonst wird nichts gesendet."
+    "message": "Wenn du den Button klickst, gehen Text, Autor, Bilder und bis zu 8 Videoframes dieses Beitrags mit deinem Schlüssel an Anthropic. Sonst wird nichts gesendet."
   },
   "popup_settings": {
     "message": "KI-Antworten"
@@ -216,5 +216,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Mit KI schreiben"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Schreib zuerst eine Idee oder hänge Medien an: Claude macht daraus einen Beitrag"
   }
 }

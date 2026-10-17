@@ -192,5 +192,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "AIで書く"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "まずアイデアを書くかメディアを添付してください。Claude が投稿にします"
   }
 }

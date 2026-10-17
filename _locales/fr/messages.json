@@ -198,7 +198,7 @@
     "message": "Comment vous écrivez : ton, argot, emoji, longueur. Collez quelques-unes de vos vraies réponses, Claude imite le style."
   },
   "opt_privacy": {
-    "message": "Quand vous cliquez sur le bouton, le texte, l'auteur, les images et jusqu'à 4 images de la vidéo de ce post sont envoyés à Anthropic avec votre clé. Rien d'autre n'est envoyé."
+    "message": "Quand vous cliquez sur le bouton, le texte, l'auteur, les images et jusqu'à 8 images de la vidéo de ce post sont envoyés à Anthropic avec votre clé. Rien d'autre n'est envoyé."
   },
   "popup_settings": {
     "message": "Réponses IA"
@@ -216,5 +216,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Écrire avec l'IA"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Écrivez d'abord une idée ou joignez un média : Claude en fait un post"
   }
 }

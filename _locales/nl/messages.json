@@ -198,7 +198,7 @@
     "message": "Hoe je schrijft: toon, slang, emoji, lengte. Plak een paar echte antwoorden van jezelf, Claude neemt de stijl over."
   },
   "opt_privacy": {
-    "message": "Als je op de knop klikt, gaan de tekst, auteur, afbeeldingen en tot 4 videobeelden van die post met jouw sleutel naar Anthropic. Verder wordt er niets verstuurd."
+    "message": "Als je op de knop klikt, gaan de tekst, auteur, afbeeldingen en tot 8 videobeelden van die post met jouw sleutel naar Anthropic. Verder wordt er niets verstuurd."
   },
   "popup_settings": {
     "message": "AI-antwoorden"
@@ -216,5 +216,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Schrijven met AI"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Schrijf eerst een idee of voeg media toe: Claude maakt er een post van"
   }
 }

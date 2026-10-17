@@ -6,7 +6,8 @@ Browser extension that strips hidden AI watermark characters and AI-style typogr
 - **Typography** — long dashes → `-`, curly quotes → `"` `'`, bullets → `-`, 𝐛𝐨𝐥𝐝 letters → plain.
 - **Live counter** — a badge on the eraser button shows how many AI tells are in your draft.
 - **Popup** — paste any text, clean it, copy it. Switch any rule group off.
-- **Reply with AI** — a ✦ button under every post on X. Claude Opus 5.5 reads the post, its images and 4 frames from its video, writes a reply in your voice, the cleaner cleans it, and it lands in X's reply box. You post it yourself. Needs your own Anthropic API key (about 1 cent per reply).
+- **Reply with AI** — a ✦ button under every post on X. Claude Opus 5.5 reads the post, its images and 8 timestamped frames from its video, writes a reply in your voice, the cleaner cleans it, and it lands in X's reply box. You post it yourself. Needs your own Anthropic API key (about 1 cent per reply).
+- **Write with AI** — a ✦ next to the eraser in the post box. Type an idea in any language (or just attach media), click, and it becomes a post in your voice; every fact in your draft stays. Cmd+Z brings your draft back.
 - **15 languages** — English, Ukrainian, German, French, Spanish, Portuguese (BR), Italian, Polish, Dutch, Turkish, Japanese, Korean, Chinese (Simplified), Hindi, Indonesian. Add one by copying `_locales/en`.
 
 Cleaning is fully offline. The only network call is the AI reply you click, straight to `api.anthropic.com` with your key. [Privacy policy](https://handsher.github.io/clean-from-ai/) · [Security audit](SECURITY-AUDIT.md)

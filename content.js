@@ -145,7 +145,7 @@ async function replyTo(article, btn) {
   btn.classList.remove('cleanai-error');
   try {
     const post = await readPost(article);
-    const res = await chrome.runtime.sendMessage({ type: 'cleanai:reply', post });
+    const res = await chrome.runtime.sendMessage({ type: 'cleanai:generate', input: { kind: 'reply', post } });
     if (!res?.ok) throw new Error(res?.error || 'API');
     const text = clean(res.text, settings.rules); // the reply goes through the same cleaner as everything you post
     if (!text.trim()) throw new Error('EMPTY');
@@ -159,7 +159,7 @@ async function replyTo(article, btn) {
     btn.classList.remove('cleanai-busy');
   }
 }
-const ERRORS = { NO_KEY: 1, BAD_KEY: 1, RATE_LIMIT: 1, NETWORK: 1, REFUSAL: 1, NO_EDITOR: 1, EMPTY: 1, API: 1 };
+const ERRORS = { NO_KEY: 1, BAD_KEY: 1, RATE_LIMIT: 1, NETWORK: 1, REFUSAL: 1, NO_EDITOR: 1, EMPTY: 1, EMPTY_DRAFT: 1, API: 1 };
 
 async function waitFor(fn, ms) {
   for (const end = Date.now() + ms; Date.now() < end; await new Promise(r => setTimeout(r, 100))) {
@@ -177,49 +177,121 @@ async function readPost(article) {
     .map(img => { const u = new URL(img.src); u.searchParams.set('name', 'small'); return u.href; });
   const video = article.querySelector('video');
   if (video?.poster?.startsWith('https://pbs.twimg.com/')) images.push(video.poster);
+  const clip = video ? await videoFrames(video) : {};
   return {
     author,
     text: texts[0]?.innerText || '',
     quoted: texts[1]?.innerText || '',
     images: [...new Set(images)].slice(0, 4),
-    frames: video ? await videoFrames(video) : [],
+    frames: clip.frames || [],
+    duration: clip.duration,
   };
 }
 
-// Up to 4 frames across the video, as JPEG base64. X streams video through MediaSource, so the canvas isn't tainted;
-// when it is (a plain cross-origin file), we stop and the poster image above is all Claude sees.
-async function videoFrames(video, count = 4) {
-  if (!(video.duration > 0) || !isFinite(video.duration) || !video.videoWidth) return [];
+// Frames spread across the video: { duration, frames: [{ data: JPEG base64, t: seconds }] }. X streams video through
+// MediaSource, so the canvas isn't tainted (a plain cross-origin file is: then only the poster image goes).
+// A seek into a part X hasn't downloaded yet takes a moment: wait until that frame is really there, and drop it
+// rather than send the previous frame twice.
+async function videoFrames(video, count = 8) {
+  if (!(video.duration > 0) || !isFinite(video.duration) || !video.videoWidth) return {};
   const scale = Math.min(1, 768 / video.videoWidth);
   const canvas = Object.assign(document.createElement('canvas'), { width: Math.round(video.videoWidth * scale), height: Math.round(video.videoHeight * scale) });
   const ctx = canvas.getContext('2d');
   const was = { time: video.currentTime, paused: video.paused };
   const frames = [];
+  let last = '';
   video.pause();
   try {
     for (let i = 0; i < count; i++) {
-      await seek(video, video.duration * (i + 0.5) / count);
+      if (!(await seek(video, video.duration * (i + 0.5) / count))) continue;
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      frames.push(canvas.toDataURL('image/jpeg', 0.7).split(',')[1]); // throws on a tainted canvas
+      const data = canvas.toDataURL('image/jpeg', 0.7).split(',')[1]; // throws on a tainted canvas
+      if (data !== last) frames.push({ data, t: Math.round(video.currentTime * 10) / 10 });
+      last = data;
     }
   } catch { /* keep the frames we got */ }
   await seek(video, was.time);
   if (!was.paused) video.play().catch(() => {});
-  return frames;
+  return { duration: video.duration, frames };
 }
 
+// True once the frame at `time` can be drawn, false if it doesn't arrive within 4 s.
 const seek = (video, time) => new Promise(resolve => {
-  const done = () => { clearTimeout(timer); video.removeEventListener('seeked', done); resolve(); };
-  const timer = setTimeout(done, 2000); // a part X hasn't loaded yet may never seek: move on
-  video.addEventListener('seeked', done);
+  const done = ok => { clearTimeout(timer); video.removeEventListener('seeked', onSeeked); video.removeEventListener('canplay', onReady); resolve(ok); };
+  const onReady = () => done(true);
+  const onSeeked = () => (video.readyState >= 2 ? done(true) : video.addEventListener('canplay', onReady)); // 2 = this frame is decoded
+  const timer = setTimeout(() => done(false), 4000);
+  video.addEventListener('seeked', onSeeked);
   video.currentTime = time;
 });
 
+// Images the user attached in the post box are local blob: pictures; Claude needs them as data.
+function imageData(img, max = 1024) {
+  const s = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+  const canvas = Object.assign(document.createElement('canvas'), { width: Math.round(img.naturalWidth * s), height: Math.round(img.naturalHeight * s) });
+  canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', 0.8).split(',')[1];
+}
+
+// --- Write with AI: a button in the post box. Your draft (an idea, notes, any language) + your attached media
+// become a post in your voice. In a reply box under a post, it writes the reply, following your draft if you typed one.
+function addWriteButton(bar, eraser) {
+  let box = bar;
+  while (box && !box.querySelector(X_EDITOR)) box = box.parentElement;
+  const wrap = document.createElement('div');
+  wrap.className = 'cleanai-wrap cleanai-write';
+  wrap.setAttribute('role', 'presentation');
+  wrap.innerHTML = `<button type="button" class="cleanai-btn">${SPARK}</button>`;
+  const btn = wrap.firstChild;
+  btn.title = t('write_button');
+  btn.setAttribute('aria-label', t('write_button'));
+  btn.addEventListener('mousedown', e => e.preventDefault()); // keep the cursor in the editor
+  btn.addEventListener('click', async e => {
+    e.preventDefault();
+    if (btn.classList.contains('cleanai-busy')) return;
+    btn.classList.add('cleanai-busy');
+    btn.classList.remove('cleanai-error');
+    btn.title = t('write_button');
+    try {
+      const editor = (box || document).querySelector(X_EDITOR);
+      if (!editor) throw new Error('NO_EDITOR');
+      const draft = readText(editor).trim();
+      const article = bar.closest('[role="dialog"]')?.querySelector('article[data-testid="tweet"]');
+      let input;
+      if (article) {
+        input = { kind: 'reply', post: await readPost(article), draft };
+      } else {
+        const images = [...(box || bar).querySelectorAll('[data-testid="attachments"] img, img[src^="blob:"]')]
+          .filter(img => img.naturalWidth > 40).slice(0, 4).map(img => (img.src.startsWith('https://') ? img.src : imageData(img)));
+        const video = (box || bar).querySelector('video');
+        const clip = video ? await videoFrames(video) : {};
+        if (!draft && !images.length && !clip.frames?.length) throw new Error('EMPTY_DRAFT');
+        input = { kind: 'post', draft, media: { images: [...new Set(images)], frames: clip.frames || [], duration: clip.duration } };
+      }
+      const res = await chrome.runtime.sendMessage({ type: 'cleanai:generate', input });
+      if (!res?.ok) throw new Error(res?.error || 'API');
+      const text = clean(res.text, settings.rules);
+      if (!text.trim()) throw new Error('EMPTY');
+      if (!(await pasteInto(editor, text))) throw new Error('NO_EDITOR'); // Cmd+Z brings your draft back
+    } catch (err) {
+      btn.classList.add('cleanai-error');
+      btn.title = t('reply_error_' + (err.message in ERRORS ? err.message : 'API'));
+    } finally {
+      btn.classList.remove('cleanai-busy');
+    }
+  });
+  eraser.after(wrap);
+}
+
 function scan() {
   for (const bar of document.querySelectorAll('[data-testid="toolBar"]')) {
-    const wrap = bar.querySelector('.cleanai-wrap');
-    if (!settings.enabled) { wrap?.remove(); continue; }
-    updateBadge(wrap || addXButton(bar)); // re-added if X re-renders the toolbar
+    const wrap = bar.querySelector('.cleanai-wrap:not(.cleanai-write)');
+    const write = bar.querySelector('.cleanai-write');
+    if (!settings.enabled) { wrap?.remove(); write?.remove(); continue; }
+    const eraser = wrap || addXButton(bar); // re-added if X re-renders the toolbar
+    updateBadge(eraser);
+    if (replies.on && !write) addWriteButton(bar, eraser);
+    else if (!replies.on) write?.remove();
   }
   if (focused) placeFloater(); // badge + position follow typing (the editor grows)
   if (replies.on && settings.enabled) document.querySelectorAll('article[data-testid="tweet"]').forEach(addReplyButton);

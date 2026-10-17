@@ -174,7 +174,7 @@
     "message": "Cara Anda menulis: nada, slang, emoji, panjang. Tempel beberapa balasan asli Anda, Claude akan meniru gayanya."
   },
   "opt_privacy": {
-    "message": "Saat Anda mengklik tombol, teks, penulis, gambar, dan hingga 4 bingkai video dari postingan itu dikirim ke Anthropic dengan kunci Anda. Selain itu tidak ada yang dikirim."
+    "message": "Saat Anda mengklik tombol, teks, penulis, gambar, dan hingga 8 bingkai video dari postingan itu dikirim ke Anthropic dengan kunci Anda. Selain itu tidak ada yang dikirim."
   },
   "popup_settings": {
     "message": "Balasan AI"
@@ -192,5 +192,11 @@
         "content": "$2"
       }
     }
+  },
+  "write_button": {
+    "message": "Tulis dengan AI"
+  },
+  "reply_error_EMPTY_DRAFT": {
+    "message": "Tulis ide atau lampirkan media dulu: Claude mengubahnya menjadi postingan"
   }
 }
